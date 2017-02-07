@@ -3,7 +3,7 @@
 
 ##Problem one
 
-Write a C program that prompts a user to input `6` *integers* and print the `largest`.
+Write a C program that prompts a user to input `6` *integers* and print the *largest*.
 
 code:
 ```c++
@@ -42,7 +42,7 @@ int main(void){
 }
 ```
 ##Problem two
-Write a C program that converts a *temperature* from `Celsius` to `Fahrenheit` and vice versa.
+Write a C program that converts a *temperature* from *Celsius* to *Fahrenheit* and vice versa.
 
 code:
 ```c++
@@ -81,7 +81,7 @@ int main(void){
 }
 ```
 ##Problem three
-Write a C program that counts the number of `blank spaces`, `new lines` and `tabs` of an input. 
+Write a C program that counts the number of *blank spaces*, *new lines* and *tabs* of an input. 
 For example: 
 if the input is Effective Programming in C and C++ - the output should be            
  
@@ -191,8 +191,8 @@ int main()
 	}
 ```
 ##Problem six
-Write a C++ function which takes a *single integer* parameter, and returns the boolean `”True”` if the given
-number is even and `”False”` otherwise.
+Write a C++ function which takes a *single integer* parameter, and returns the boolean *”True”* if the given
+number is even and *”False”* otherwise.
 
 
 code:
@@ -230,7 +230,7 @@ void IsEven(int num)
 ##Problem seven
 In number theory, a *perfect number* is a positive integer that is equal to the sum of its proper positive
 divisors, that is, the sum of its positive divisors excluding the number itself.  The *smallest* perfect number
-is `6`, which is the sum of `1, 2, and 3`.  Other perfect numbers are `28, 496, and 8,128`.  Write a program in
+is `6`, which is the sum of `1`, `2`, and `3`.  Other perfect numbers are `28`, `496`, and `8,128`.  Write a program in
 either C or C++ to print all *perfect numbers* in given range using a function.
 
 code:
@@ -312,9 +312,9 @@ return 0;
 }
 ```
 ##Problem nine
-In mathematics, the `Fibonacci numbers` are the sequence of numbers `{Fn}8n=1` defined by the linear
-recurrence equation `Fn=Fn-1+Fn-2` with `F1 = F2 = 1`, and conventionally defining F0 = 0.  
-The first few Fibonacci numbers are *1, 1, 2, 3, 5, 8,13, 21,...etc*.  
+In mathematics, the *Fibonacci numbers* are the sequence of numbers **{Fn}8n=1** defined by the linear
+recurrence equation **Fn=Fn-1+Fn-2** with **F1 = F2 = 1**, and conventionally defining F0 = 0.  
+The first few *Fibonacci numbers* are *1, 1, 2, 3, 5, 8,13, 21,...etc*.  
 Implement a C++ function to compute and display the first *n numbers* of the *Fibonacci list*,
 where n is provided as an input by the user.
 
@@ -345,7 +345,7 @@ int main()
 }
 ```
 ##Problem 10
-Implement two C++ functions called `swap_1(int, int)` and `swap_2(int&, int&)` that are supposed to *swap* two values.   
+Implement two C++ functions called **swap_1(int, int)** and **swap_2(int&, int&)** that are supposed to *swap* two values.   
 Display the final values just before the end of each function, and display the results from the main function 
 before and after the call. 
 What do you make of these two functions?
