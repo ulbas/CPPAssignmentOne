@@ -1,7 +1,7 @@
-# Assignment+1 
-Ulrich Baskerud 	S236421
+# Assignment1 
+			Ulrich Baskerud 	S236421
 
-##Problem+one
+##Problem one
 
 Write a C program that prompts a user to input `6` integers and print the `largest`.
 
@@ -41,7 +41,7 @@ int main(void){
 	return 0;
 }
 ```
-##Problem+two
+##Problem two
 Write a C program that converts a temperature from `Celsius` to `Fahrenheit` and vice versa.
 
 code:
@@ -85,7 +85,7 @@ Write a C program that counts the number of `blank spaces`, `new lines` and `tab
 For example: 
 if the input is Effective Programming in C and C++ - the output should be 
 | Words         | value    | 
-|:-------------:|:--------:|
+| ------------- | :------: |
 | New Lines     |    1     | 
 | Blank Spaces  |    5     |   
 | Tabs          |    0     |
