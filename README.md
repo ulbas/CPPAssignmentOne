@@ -153,11 +153,11 @@ code:
 
 ##Problem five
 Write a program in either C or C++ that prints the following *pattern*.
- `1  
-  1 2  
-  1 2 3  
-  1 2 3 4  
-  1 2 3 4 5`
+  1    
+  1 2    
+  1 2 3    
+  1 2 3 4    
+  1 2 3 4 5  
 
 code:
 ```c++
