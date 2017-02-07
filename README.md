@@ -153,11 +153,11 @@ code:
 
 ##Problem five
 Write a program in either C or C++ that prints the following *pattern*.
- 1/n
- 1 2/n
- 1 2 3/n
- 1 2 3 4/n
- 1 2 3 4 5/n
+ 1\n
+ 1 2\n
+ 1 2 3\n
+ 1 2 3 4\n
+ 1 2 3 4 5\n
 
 code:
 ```c++
