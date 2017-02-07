@@ -85,10 +85,10 @@ Write a C program that counts the number of `blank spaces`, `new lines` and `tab
 For example: 
 if the input is Effective Programming in C and C++ - the output should be            
  
- ###Words		value     
- ###New Lines         1      
- ###Blank Spaces      5       
- ###Tabs              0     
+ Words	  -	value     
+ New Lines       = 1      
+ Blank Spaces    = 5       
+ Tabs            = 0     
 
 
 code:
