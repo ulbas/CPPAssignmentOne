@@ -3,7 +3,7 @@
 
 ##Problem one
 
-Write a C program that prompts a user to input `6` integers and print the `largest`.
+Write a C program that prompts a user to input `6` *integers* and print the `largest`.
 
 code:
 ```c++
@@ -42,7 +42,7 @@ int main(void){
 }
 ```
 ##Problem two
-Write a C program that converts a temperature from `Celsius` to `Fahrenheit` and vice versa.
+Write a C program that converts a *temperature* from `Celsius` to `Fahrenheit` and vice versa.
 
 code:
 ```c++
@@ -83,12 +83,12 @@ int main(void){
 ##Problem three
 Write a C program that counts the number of `blank spaces`, `new lines` and `tabs` of an input. 
 For example: 
-if the input is Effective Programming in C and C++ - the output should be 
-| Words         | value    | 
-| ------------- | :------: |
-| New Lines     |    1     | 
-| Blank Spaces  |    5     |   
-| Tabs          |    0     |
+if the input is Effective Programming in C and C++ - the output should be            
+ 
+ ###Words		value     
+ ###New Lines         1      
+ ###Blank Spaces      5       
+ ###Tabs              0     
 
 
 code:
@@ -120,7 +120,7 @@ int main(void){
 ```
 
 ##Problem four
-Write a C or C++ program that counts the `number of words` in a given sentence.
+Write a C or C++ program that counts the *number of words* in a given sentence.
 
 code:
 ```c++
@@ -152,7 +152,7 @@ code:
 ```
 
 ##Problem five
-Write a program in either C or C++ that prints the following pattern.
+Write a program in either C or C++ that prints the following *pattern*.
 `1
  1 2
  1 2 3
@@ -191,7 +191,7 @@ int main()
 	}
 ```
 ##Problem six
-Write a C++ function which takes a single integer parameter, and returns the boolean `”True”` if the given
+Write a C++ function which takes a *single integer* parameter, and returns the boolean `”True”` if the given
 number is even and `”False”` otherwise.
 
 
@@ -228,10 +228,10 @@ void IsEven(int num)
 }
 ```
 ##Problem seven
-In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive
-divisors, that is, the sum of its positive divisors excluding the number itself.  The smallest perfect number
+In number theory, a *perfect number* is a positive integer that is equal to the sum of its proper positive
+divisors, that is, the sum of its positive divisors excluding the number itself.  The *smallest* perfect number
 is `6`, which is the sum of `1, 2, and 3`.  Other perfect numbers are `28, 496, and 8,128`.  Write a program in
-either C or C++ to print all `perfect numbers` in given range using a function.
+either C or C++ to print all *perfect numbers* in given range using a function.
 
 code:
 ```c++
@@ -264,12 +264,12 @@ else
 ```
 
 ##Problem eight
-In mathematics, a triangle is a polygon with three edges and three vertices.  
+In mathematics, a *triangle* is a polygon with *three edges and three vertices*.  
 Triangles can be classified according to the lengths of their sides.
 
-• An equilateral triangle has all sides the same length.
-• An isosceles triangle has two sides of equal length.
-• A scalene triangle has all its sides of different lengths.
+• An ***equilateral** triangle has all sides the same length.
+• An **isosceles** triangle has two sides of equal length.
+• A **scalene** triangle has all its sides of different lengths.
 
 Write a program either in C or C++ that checks whether a given triangle is
 `equilateral`, `isosceles` or `scalene`.
