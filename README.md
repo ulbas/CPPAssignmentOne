@@ -267,7 +267,7 @@ else
 In mathematics, a *triangle* is a polygon with *three edges and three vertices*.  
 Triangles can be classified according to the lengths of their sides.
 
-• An ***equilateral** triangle has all sides the same length.
+• An **equilateral** triangle has all sides the same length.
 • An **isosceles** triangle has two sides of equal length.
 • A **scalene** triangle has all its sides of different lengths.
 
