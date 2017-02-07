@@ -1,5 +1,5 @@
 # Assignment1 
-			Ulrich Baskerud 	S236421
+###Ulrich Baskerud 	S236421
 
 ##Problem one
 
