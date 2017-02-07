@@ -314,8 +314,8 @@ return 0;
 ##Problem nine
 In mathematics, the `Fibonacci numbers` are the sequence of numbers `{Fn}8n=1` defined by the linear
 recurrence equation `Fn=Fn-1+Fn-2` with `F1 = F2 = 1`, and conventionally defining F0 = 0.  
-The first few Fibonacci numbers are `1, 1, 2, 3, 5, 8,13, 21,...etc`.  
-Implement a C++ function to compute and display the first `n numbers` of the Fibonacci list,
+The first few Fibonacci numbers are *1, 1, 2, 3, 5, 8,13, 21,...etc*.  
+Implement a C++ function to compute and display the first *n numbers* of the *Fibonacci list*,
 where n is provided as an input by the user.
 
 
