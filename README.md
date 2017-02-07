@@ -152,7 +152,7 @@ code:
 ```
 
 ##Problem five
-Write a program in either C or C++ that prints the following *pattern*.
+Write a program in either C or C++ that prints the following *pattern*.  
   1    
   1 2    
   1 2 3    
