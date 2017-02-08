@@ -109,7 +109,10 @@ int main(void){
 ###Write a C program that counts the number of *blank spaces*, *new lines* and *tabs* of an input. 
 For example: 
 if the input is Effective Programming in C and C++ - the output should be            
- 
+  2 | 4 | 5   
+ ---|---|---  
+  4 | 5 | 2     
+  2 | 4 | 3  
  Words	  -	value     
  New Lines       = 1      
  Blank Spaces    = 5       
@@ -261,10 +264,18 @@ int main()
 	}
 ```
 ##Problem six
-###Write a C++ function which takes a *single integer* parameter, and returns the boolean *”True”* if the given
-###number is even and *”False”* otherwise.
+###Write a C++ function which takes a *single integer* parameter, and returns the boolean *”True”* if the given number is even and *”False”* otherwise.
 
+Wrote a code ie check whether the given number is odd or even, so that users can enter a number and get an answer back if it is odd or Even.
+```
+Please enter a number.
+28
+is an even number.
 
+Please enter a number.
+33
+is an odd number.
+```
 code:
 ```c++
 #include <iostream>
@@ -298,10 +309,19 @@ void IsEven(int num)
 }
 ```
 ##Problem seven
-In number theory, a *perfect number* is a positive integer that is equal to the sum of its proper positive
-divisors, that is, the sum of its positive divisors excluding the number itself.  The *smallest* perfect number
-is `6`, which is the sum of `1`, `2`, and `3`.  Other perfect numbers are `28`, `496`, and `8,128`.  Write a program in
-either C or C++ to print all *perfect numbers* in given range using a function.
+###In number theory, a *perfect number* is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself.  The *smallest* perfect number is `6`, which is the sum of `1`, `2`, and `3`. Other perfect numbers are `28`, `496`, and `8,128`.  Write a program in either C or C++ to print all *perfect numbers* in given range using a function.
+
+To check if the number is an *perfect number* i had to use **for loop** with an if sentence in it to check if the number `n` divided by `i`
+gave a rest number that gave  `k=k+i` value equal to `n`.
+```
+Enter a number:  
+6  
+is a perfect number.  
+  
+Enter a number:  
+7
+is not a perfect number.
+```
 
 code:
 ```c++
@@ -323,25 +343,24 @@ for(i=1;i<n;i++)
 }
 if(k==n)
 {
-	cout<<n<<" is a perfect number";
+	cout<<n<<" is a perfect number.";
 }
 else
 {
-	cout<<n<<" is not a perfect number";
+	cout<<n<<" is not a perfect number.";
 }
 	return 0;
 }
 ```
 
 ##Problem eight
-In mathematics, a *triangle* is a polygon with *three edges and three vertices*.  
-Triangles can be classified according to the lengths of their sides.  
+###In mathematics, a *triangle* is a polygon with *three edges and three vertices*. Triangles can be classified according to the lengths of their sides.  
 
 • An **equilateral** triangle has all sides the same length.  
 • An **isosceles** triangle has two sides of equal length.  
 • A **scalene** triangle has all its sides of different lengths.  
 
-Write a program either in C or C++ that checks whether a given triangle is `equilateral`, `isosceles` or `scalene`.  
+###Write a program either in C or C++ that checks whether a given triangle is `equilateral`, `isosceles` or `scalene`.  
 
 code:
 
