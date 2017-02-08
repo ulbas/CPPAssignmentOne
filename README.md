@@ -170,6 +170,11 @@ int main(void){
 ##Problem four
 Write a C or C++ program that counts the *number of words* in a given sentence.
 
+```
+Enter the text string
+Hello world
+Number of words in given text string are : 2
+```
 code:
 ```c++
 #include <stdio.h>
