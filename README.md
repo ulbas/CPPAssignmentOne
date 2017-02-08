@@ -4,7 +4,7 @@
 ##Problem one
 
 ###Write a C program that prompts a user to input `6` *integers* and print the *largest*.
-
+The program lets the user type in 6 integers and picks out the largest number.
 This is what i got:
 ```
 Enter your six integers.  
@@ -57,7 +57,7 @@ int main(void){
 ###Write a C program that converts a *temperature* from *Celsius* to *Fahrenheit* and vice versa.
 
 Im giving the user 2 choises, picking between converting from celsius to fahrenheit and from fahrenheit to celsius.
-When the user have choosed which way they want to convert they get a new sentence that tell them to give the  
+When the user have choosed which way they want to convert they get a new statement that tell them to give the  
 program the temperatur they want to be converted.  
 Under you see how the program runs.
 ```
@@ -109,10 +109,7 @@ int main(void){
 ###Write a C program that counts the number of *blank spaces*, *new lines* and *tabs* of an input. 
 For example: 
 if the input is Effective Programming in C and C++ - the output should be            
-  First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column  
+   
  Words	  -	value     
  New Lines       = 1      
  Blank Spaces    = 5       
@@ -173,7 +170,7 @@ int main(void){
 ##Problem four
 ###Write a C or C++ program that counts the *number of words* in a given sentence.
 
-My program lets the user type in a text sentence, when the sentence is typed in it counts how many words are used.
+My program lets the user type in a text statements, when the statement is typed in it counts how many words are used.
 
 ```
 Enter the text string
@@ -311,8 +308,7 @@ void IsEven(int num)
 ##Problem seven
 ###In number theory, a *perfect number* is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself.  The *smallest* perfect number is `6`, which is the sum of `1`, `2`, and `3`. Other perfect numbers are `28`, `496`, and `8,128`.  Write a program in either C or C++ to print all *perfect numbers* in given range using a function.
 
-To check if the number is an *perfect number* i had to use **for loop** with an if sentence in it to check if the number `n` divided by `i`
-gave a rest number that gave  `k=k+i` value equal to `n`.
+To check if the number is an *perfect number* i had to use **for loop** with an if statements in it to check if the number `n` divided by `i` gave a rest number that gave  `k=k+i` value equal to `n`.
 ```
 Enter a number:  
 6  
@@ -361,6 +357,27 @@ else
 • A **scalene** triangle has all its sides of different lengths.  
 
 ###Write a program either in C or C++ that checks whether a given triangle is `equilateral`, `isosceles` or `scalene`.  
+The program let the user type in three integers, then it compairs the integers in if statements and picks out the right statement depending on if two or more are alike.
+
+```
+Enter the sides of a triangle:
+4  
+3  
+5  
+The triangle is scalene
+
+Enter the sides of a triangle:
+4
+4
+5
+The triangle is isosceles
+
+Enter the sides of a triangle:
+5  
+5  
+5  
+The triangle is equilateral
+```
 
 code:
 
@@ -374,7 +391,7 @@ int main()
 	//declaring a,b and c as integer
 int a,b,c;
 	// Asking the user to choose the three sides
-cout<<"Enter the sides of a triangle"<<endl;
+cout<<"Enter the sides of a triangle:"<<endl;
 	//reading the three values form console
 cin>>a>>b>>c;
 
@@ -400,12 +417,14 @@ return 0;
 }
 ```
 ##Problem nine
-In mathematics, the *Fibonacci numbers* are the sequence of numbers **{Fn}8n=1** defined by the linear
-recurrence equation **Fn=Fn-1+Fn-2** with **F1 = F2 = 1**, and conventionally defining F0 = 0.  
-The first few *Fibonacci numbers* are *1, 1, 2, 3, 5, 8,13, 21,...etc*.  
-Implement a C++ function to compute and display the first *n numbers* of the *Fibonacci list*,
-where n is provided as an input by the user.
+###In mathematics, the *Fibonacci numbers* are the sequence of numbers **{Fn}8n=1** defined by the linear recurrence equation **Fn=Fn-1+Fn-2** with **F1 = F2 = 1**, and conventionally defining F0 = 0. The first few *Fibonacci numbers* are *1, 1, 2, 3, 5, 8,13, 21,...etc*. Implement a C++ function to compute and display the first *n numbers* of the *Fibonacci list*, where n is provided as an input by the user.
 
+This program starts with letting the user type in an positiv number, this number lets the code know how long it would search for numbers for the *Fibonacci Series*.
+```
+Enter a positive number:
+24
+Fibonacci Series: 1 1 2 3 5 8 13 21
+```
 
 code:
 
@@ -433,10 +452,22 @@ int main()
 }
 ```
 ##Problem 10
-Implement two C++ functions called **swap_1(int, int)** and **swap_2(int&, int&)** that are supposed to *swap* two values.   
-Display the final values just before the end of each function, and display the results from the main function 
-before and after the call. 
-What do you make of these two functions?
+###Implement two C++ functions called **swap_1(int, int)** and **swap_2(int&, int&)** that are supposed to *swap* two values. Display the final values just before the end of each function, and display the results from the main function before and after the call. What do you make of these two functions?
+
+This code tries to swap values, and is written to test two different swap functions.
+
+The test is shown below:
+```
+Value before swap a: 10
+Value before swap b: 50
+Value after swap a: 10
+Value after swap b: 50
+New value
+Value before swap a: 10
+Value before swap b: 50
+Value after swap a: 50
+Value after swap b: 10
+```
 
 code:
 ```c++
