@@ -109,10 +109,10 @@ int main(void){
 ###Write a C program that counts the number of *blank spaces*, *new lines* and *tabs* of an input. 
 For example: 
 if the input is Effective Programming in C and C++ - the output should be            
-  2 | 4 | 5   
- ---|---|---  
-  4 | 5 | 2     
-  2 | 4 | 3  
+  First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column  
  Words	  -	value     
  New Lines       = 1      
  Blank Spaces    = 5       
