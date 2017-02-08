@@ -115,18 +115,37 @@ if the input is Effective Programming in C and C++ - the output should be
  Blank Spaces    = 5       
  Tabs            = 0     
 
-
+I wrote this program with the thought of counting the value of blank space, new line and tab.
+The program was running on forever, so therefor I included a "quit" possibility so the user  
+could end when he feels done with the task.
+```
+Counting the value of tab, new line and blank space usage.
+Use q to end the program.
+.  
+.  
+.  
+.  
+.  
+q  
+Blanks: 10, Newlines: 22, Tabs: 14 .  
+The total value Blanks: 50, Newline: 22 and Tabs: 0 .
+```
 code:
 ```c++
 #include <stdio.h>
 
 int main(void){
 	//declearing c, nl, ns, nt as int
-	int c, nl, ns, nt;
+	int c, nl, ns, nt, lval, sval, tval;
 	// giving them 0 as starting value
 	nl=0;
 	ns=0;
 	nt=0;
+	//setting the value of tab, new line and blank spaces
+	lval=1;
+	sval=5;
+	tval=0;
+	printf("Counting the value of tab, new line and blank space usage.\nUse q to end the program.");
 	// starting a while loop so my program reads when i type the different keys.
 	while((c = getchar()) != EOF && c != 'q')	{
 	// reading the typings
@@ -137,9 +156,13 @@ int main(void){
 		if(c == ' ')
 			++ns;
 	}
+		lval= nl*lval;
+		sval= ns*sval;
+		tval= nt*tval;
 		//printing out a sentence and the count value for Newline, Space and Tab
-		printf("Blanks: %d, Newlines: %d, Tabs: %d", ns, nl, nt);
-
+		printf("Blanks: %d, Newlines: %d, Tabs: %d  ." , ns, nl, nt);
+		//printing out the total value of Newline, Space and tab
+		printf("The total value Blanks: %d, Newline: %d and Tabs: %d .", sval, lval, tval);
 		return 0;
 	}
 ```
