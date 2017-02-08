@@ -3,7 +3,19 @@
 
 ##Problem one
 
-Write a C program that prompts a user to input `6` *integers* and print the *largest*.
+###Write a C program that prompts a user to input `6` *integers* and print the *largest*.
+
+This is what i got:
+```
+Enter your six integers.  
+5  
+3  
+7  
+10  
+29  
+2    
+The largest number is 29
+```
 
 code:
 ```c++
@@ -42,8 +54,21 @@ int main(void){
 }
 ```
 ##Problem two
-Write a C program that converts a *temperature* from *Celsius* to *Fahrenheit* and vice versa.
+###Write a C program that converts a *temperature* from *Celsius* to *Fahrenheit* and vice versa.
 
+Im giving the user 2 choises, picking between converting from celsius to fahrenheit and from fahrenheit to celsius.
+When the user have choosed which way they want to convert they get a new sentence that tell them to give the  
+program the temperatur they want to be converted.  
+Under you see how the program runs.
+```
+Convert from Celsius to farenheit, visa versa!  
+pick 1 for Celsius to farenheit.  
+or 2 for farenheit to celsius.  
+1  
+Write celsius temperatur you want to convert to farenheit :
+35  
+You have choosed 35 and that is in farenheit 95 degrees
+```
 code:
 ```c++
 #include <stdio.h>
@@ -58,7 +83,7 @@ int main(void){
 	scanf("%d", &valg);
 	
 	if (valg==1){
-		printf("Write celsius temperatur you want to convert til farenheit : ");
+		printf("Write celsius temperatur you want to convert to farenheit : ");
 		scanf("%f", &temp);
 		
 		temperatur= (temp*(9.0/5)+32);
@@ -81,7 +106,7 @@ int main(void){
 }
 ```
 ##Problem three
-Write a C program that counts the number of *blank spaces*, *new lines* and *tabs* of an input. 
+###Write a C program that counts the number of *blank spaces*, *new lines* and *tabs* of an input. 
 For example: 
 if the input is Effective Programming in C and C++ - the output should be            
  
