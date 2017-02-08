@@ -168,13 +168,16 @@ int main(void){
 ```
 
 ##Problem four
-Write a C or C++ program that counts the *number of words* in a given sentence.
+###Write a C or C++ program that counts the *number of words* in a given sentence.
+
+My program lets the user type in a text sentence, when the sentence is typed in it counts how many words are used.
 
 ```
 Enter the text string
 Hello world
 Number of words in given text string are : 2
 ```
+
 code:
 ```c++
 #include <stdio.h>
@@ -205,12 +208,26 @@ code:
 ```
 
 ##Problem five
-Write a program in either C or C++ that prints the following *pattern*.  
+###Write a program in either C or C++ that prints the following *pattern*.  
   1    
   1 2    
   1 2 3    
   1 2 3 4    
   1 2 3 4 5  
+
+This pattern program use two *for loops*, the first for loop give the pattern a *Newline* and rows,  
+while the second counts the numbers. 
+Here i also gave the value to *rader/rows*
+```
+how many rows with numbers do you want?
+6  
+1  
+1 2  
+1 2 3  
+1 2 3 4  
+1 2 3 4 5  
+1 2 3 4 5 6  
+```
 
 code:
 ```c++
@@ -244,8 +261,8 @@ int main()
 	}
 ```
 ##Problem six
-Write a C++ function which takes a *single integer* parameter, and returns the boolean *”True”* if the given
-number is even and *”False”* otherwise.
+###Write a C++ function which takes a *single integer* parameter, and returns the boolean *”True”* if the given
+###number is even and *”False”* otherwise.
 
 
 code:
