@@ -3,8 +3,11 @@
 
 ##Problem one
 
-###Write a C program that prompts a user to input `6` *integers* and print the *largest*.
+###Write a C program that prompts a user to input `6` *integers* and print the *largest*.  
+
 The program lets the user type in 6 integers and picks out the largest number.
+Im using an array to store the 6 integers that is typed in console, and declaring largest as 0 so the largest value have a place to be stored aswell. Setting upp my main with a for loop to pick up all my integers and putting them into the array. Then the new for loop does the same, but instead of storing the values in an array, it checks if the newest number written is bigger then the last one and stores the biggest in the int *largest*.
+
 This is what i got:
 ```
 Enter your six integers.  
@@ -58,7 +61,8 @@ int main(void){
 
 Im giving the user 2 choises, picking between converting from celsius to fahrenheit and from fahrenheit to celsius.
 When the user have choosed which way they want to convert they get a new statement that tell them to give the  
-program the temperatur they want to be converted.  
+program the temperatur they want to convert. 
+Im using float to store temperatur so the temperature could be decimal numbers, and giving my main if and else statements to pick the right converting method from what the user have selected earlier in the console.
 Under you see how the program runs.
 ```
 Convert from Celsius to farenheit, visa versa!  
@@ -115,11 +119,15 @@ if the input is Effective Programming in C and C++ - the output should be
  Blank Spaces    = 5       
  Tabs            = 0     
 
-I wrote this program with the thought of counting the value of blank space, new line and tab.
+I have chosen to write my code in order to count the value of blank space, new line and tab.
 The program was running on forever, so therefor I included a "quit" possibility so the user  
 could end when he feels done with the task.
+
+Under you can see the build up, I started to declare the different variables i was going to use. Then I wrote a while loop that would run continuously while the program was initiated, in this while loop the program would count every *blankspace* *Newlines* and *tabs* used while the program was running.
+I also gave the code the chanse to quit på using q to end the program.
+
 ```
-Counting the value of tab, new line and blank space usage.
+Counting the value of tab, new line and blank space usage.  
 Use q to end the program.
 .  
 .  
@@ -171,6 +179,9 @@ int main(void){
 ###Write a C or C++ program that counts the *number of words* in a given sentence.
 
 My program lets the user type in a text sentence, when the sentence is typed in it counts how many words are used.
+
+Starting my code with including the string.h library and giving the int main a character array so it could store the characters from the text written into console.
+declaring count and a i value so i have a place to store these values. Using a for loop to store the words and count the number of words plus value in the end
 
 ```
 Enter the text string
@@ -233,7 +244,7 @@ code:
 ```c++
 
 #include <iostream>
-#include <conio.h>
+
  // Using namespace so i dont have to use std>>,std<< in my programming code
 using namespace std;
 //declaring and setting up main
@@ -263,7 +274,7 @@ int main()
 ##Problem six
 ###Write a C++ function which takes a *single integer* parameter, and returns the boolean *”True”* if the given number is even and *”False”* otherwise.
 
-Wrote a code ie check whether the given number is odd or even, so that users can enter a number and get an answer back if it is odd or Even.
+Wrote a code in c++ to check whether the given number is odd or even, so that users can write a number into console and get an answer back if it is odd or Even.
 ```
 Please enter a number.
 28
@@ -308,7 +319,7 @@ void IsEven(int num)
 ##Problem seven
 ###In number theory, a *perfect number* is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself.  The *smallest* perfect number is `6`, which is the sum of `1`, `2`, and `3`. Other perfect numbers are `28`, `496`, and `8,128`.  Write a program in either C or C++ to print all *perfect numbers* in given range using a function.
 
-To check if the number is an *perfect number* i had to use **for loop** with an if statements in it to check if the number `n` divided by `i` gave a rest number that gave  `k=k+i` value equal to `n`.
+To check if the number is an *perfect number* i had to use *for loop* with if/else statements in it to check if the number `n` divided by `i` gave a rest number that gave  `k=k+i` value equal to `n`.
 ```
 Enter a number:  
 6  
