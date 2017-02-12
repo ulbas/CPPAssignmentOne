@@ -214,7 +214,7 @@ code:
 	}
 		//printing out last sentence with number of words typed
 	printf("Number of words in given text string are : %d\n", count + 1);
-
+	return 0;
 		  }
 ```
 
