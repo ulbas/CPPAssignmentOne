@@ -124,7 +124,7 @@ The program was running on forever, so therefor I included a "quit" possibility 
 could end when he feels done with the task.
 
 Under you can see the build up, I started to declare the different variables i was going to use. Then I wrote a while loop that would run continuously while the program was initiated, in this while loop the program would count every *blankspace* *Newlines* and *tabs* used while the program was running.
-I also gave the code the chanse to quit på using q to end the program.
+
 
 ```
 Counting the value of tab, new line and blank space usage.  
@@ -133,8 +133,7 @@ Use q to end the program.
 .  
 .  
 .  
-.  
-q  
+.    
 Blanks: 10, Newlines: 22, Tabs: 14 .  
 The total value Blanks: 50, Newline: 22 and Tabs: 0 .
 ```
@@ -153,9 +152,9 @@ int main(void){
 	lval=1;
 	sval=5;
 	tval=0;
-	printf("Counting the value of tab, new line and blank space usage.\nUse q to end the program.");
+	printf("Counting the value of tab, new line and blank space usage.\n");
 	// starting a while loop so my program reads when i type the different keys.
-	while((c = getchar()) != EOF && c != 'q')	{
+	while((c = getchar()) != EOF)	{
 	// reading the typings
 		if (c == '\n')
 			++nl;
