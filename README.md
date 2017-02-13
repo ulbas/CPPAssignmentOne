@@ -318,15 +318,13 @@ void IsEven(int num)
 ##Problem seven
 ###In number theory, a *perfect number* is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself.  The *smallest* perfect number is `6`, which is the sum of `1`, `2`, and `3`. Other perfect numbers are `28`, `496`, and `8,128`.  Write a program in either C or C++ to print all *perfect numbers* in given range using a function.
 
-To check if the number is an *perfect number* i had to use *for loop* with if/else statements in it to check if the number `n` divided by `i` gave a rest number that gave  `k=k+i` value equal to `n`.
+To pick out the *perfect numbers* I used two for loops to pick out the right numbers.
 ```
-Enter a number:  
-6  
-is a perfect number.  
+Enter any number to print perfect number up to: 
+600 
+All Perfect numbers between 1 to 600   
   
-Enter a number:  
-7
-is not a perfect number.
+6 28 496 is Perfect Number
 ```
 
 code:
@@ -337,26 +335,35 @@ using namespace std;
 
 int main()
 {
-int n,i;
-int k=0;
-cout<< "Enter a number: ";
-cin>>n;
+    int i, j, n, sum = 0;
+ 
+    
+    cout<<"Enter any number to print perfect number up to: "<<endl;
+    cin>>n>>endl;
+ 
+    cout<<"All Perfect numbers between 1 to "<<n<<endl; 
+ 
+    for(i=1; i<=n; i++)
+    {
+        sum = 0;
 
-for(i=1;i<n;i++)
-{
-	if(n%i==0)
-		k=k+i;
-}
-if(k==n)
-{
-	cout<<n<<" is a perfect number.";
-}
-else
-{
-	cout<<n<<" is not a perfect number.";
-}
-	return 0;
-}
+        for(j=1; j<i; j++)
+        {
+            if(i%j==0)
+            {
+                sum += j;
+            }
+        }
+  
+        
+        if(sum == i)
+        {
+            cout<<i<<" is Perfect Number."<<endl;
+        }
+    }
+ 
+    return 0;
+} 
 ```
 
 ##Problem eight
