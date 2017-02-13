@@ -323,7 +323,6 @@ To pick out the *perfect numbers* I used two for loops to pick out the right num
 Enter any number to print perfect number up to: 
 600 
 All Perfect numbers between 1 to 600   
-  
 6 28 496 is Perfect Number
 ```
 
