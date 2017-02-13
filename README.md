@@ -320,48 +320,51 @@ void IsEven(int num)
 
 To pick out the *perfect numbers* I used two for loops to pick out the right numbers.
 ```
-Enter any number to print perfect number up to: 
-600 
-All Perfect numbers between 1 to 600   
-6 28 496 is Perfect Number
+Enter any number to print perfect number up to: 100000
+All Perfect numbers between 1 to 100000
+6 is Perfect Number.
+28 is Perfect Number.
+496 is Perfect Number.
+8128 is Perfect Number.
 ```
 
 code:
 ```c++
 #include <iostream>
-
 using namespace std;
-
 int main()
 {
-    int i, j, n, sum = 0;
- 
-    
-    cout<<"Enter any number to print perfect number up to: "<<endl;
-    cin>>n>>endl;
- 
-    cout<<"All Perfect numbers between 1 to "<<n<<endl; 
- 
-    for(i=1; i<=n; i++)
-    {
-        sum = 0;
+	int i, j, n, sum = 0;
 
-        for(j=1; j<i; j++)
-        {
-            if(i%j==0)
-            {
-                sum += j;
-            }
-        }
-  
-        
-        if(sum == i)
-        {
-            cout<<i<<" is Perfect Number."<<endl;
-        }
-    }
- 
-    return 0;
+
+	cout<<"Enter any number to print perfect number up to: ";
+	cin>>n;
+
+
+
+	cout<<"All Perfect numbers between 1 to "<<n<<endl;
+
+
+	for(i=1; i<=n; i++)
+	{
+		sum = 0;
+
+		for(j=1; j<i; j++)
+		{
+			if(i%j==0)
+			{
+				sum += j;
+			}
+		}
+
+
+		if(sum == i)
+		{
+			cout<<i<<" is Perfect Number."<<endl;
+		}
+	}
+
+	return 0;
 } 
 ```
 
