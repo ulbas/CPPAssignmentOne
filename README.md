@@ -1,535 +1,261 @@
-# Assignment1 
-###Ulrich Baskerud 	S236421
+#Assignment 2
 
-##Problem one
+##Problem 1
+####Write a C++ program to sort an array of numbers in an ascending order and descending order based on user’s choice and display them.
 
-###Write a C program that prompts a user to input `6` *integers* and print the *largest*.  
-
-The program lets the user type in 6 integers and picks out the largest number.
-Im using an array to store the 6 integers that is typed in console, and declaring largest as 0 so the largest value have a place to be stored aswell. Setting upp my main with a for loop to pick up all my integers and putting them into the array. Then the new for loop does the same, but instead of storing the values in an array, it checks if the newest number written is bigger then the last one and stores the biggest in the int *largest*.
-
-This is what i got:
-```
-Enter your six integers.  
-5  
-3  
-7  
-10  
-29  
-2    
-The largest number is 29
-```
-
-code:
-```c++
-#include <stdio.h>
-		//creating an array to store the numbers in
-int numbers[6]={0,0,0,0,0,0};
-		//declaring the largest value, set value = 0
-int largest =0;
-		//setting up main
-int main(void){
-		//printing to console, asking for six number
-	printf("Enter your six integers. \n");
-		//for loop scaning 6 numbers for my array
-	for (int i=0; i<6; ++i)
-	{
-		scanf("%d", &numbers[i]);
-
-	}
-		//printing the numbers from last scanf
-	printf("You entered the following numbers: ");
-	for (int i=0; i<6; ++i)
-	{
-		printf("%d,", numbers[i]);
-	}
-/		/picking the biggest number from the array
-	for (int i =0; i<6; ++i)
-	{
-		if (numbers[i]> largest)
-		{
-			largest=numbers[i];
-		}
-	}
-
-	printf(" \n The largest number is %d\n", &largest);
-	return 0;
-}
-```
-##Problem two
-###Write a C program that converts a *temperature* from *Celsius* to *Fahrenheit* and vice versa.
-
-Im giving the user 2 choises, picking between converting from celsius to fahrenheit and from fahrenheit to celsius.
-When the user have choosed which way they want to convert they get a new statement that tell them to give the  
-program the temperatur they want to convert. 
-Im using float to store temperatur so the temperature could be decimal numbers, and giving my main if and else statements to pick the right converting method from what the user have selected earlier in the console.
-Under you see how the program runs.
-```
-Convert from Celsius to farenheit, visa versa!  
-pick 1 for Celsius to farenheit.  
-or 2 for farenheit to celsius.  
-1  
-Write celsius temperatur you want to convert to farenheit :
-35  
-You have choosed 35 and that is in farenheit 95 degrees
-```
-code:
-```c++
-#include <stdio.h>
-
-float temperatur;
-float temp;
-int valg=0;
-int main(void){
-
-	printf("Convert from Celsius to farenheit, visa versa!\n pick 1 for Celsius to farenheit.\n or 2 for farenheit to celsius.\n");
-	
-	scanf("%d", &valg);
-	
-	if (valg==1){
-		printf("Write celsius temperatur you want to convert to farenheit : ");
-		scanf("%f", &temp);
-		
-		temperatur= (temp*(9.0/5)+32);
-		printf("You have choosed %.1f and that is in farenheit %.1f degrees",temp, temperatur);
-		
-	}
-	else if (valg==2){
-		printf("Write the farenheit temperatur you want to convert to celsius : ");
-		scanf("%f", &temp);
-		temperatur= (((temp-32)*5)/9.0);
-		
-		printf("You have choosed %.1f farenheit, and that is in celsius %.1f degrees",temp, temperatur);
-		
-	}
-	else if(valg>=3){
-		printf("type in celsius or farenheit");
-	}
-	
-	return 0;
-}
-```
-##Problem three
-###Write a C program that counts the number of *blank spaces*, *new lines* and *tabs* of an input. 
-For example: 
-if the input is Effective Programming in C and C++ - the output should be            
-   
- Words	  -	value     
- New Lines       = 1      
- Blank Spaces    = 5       
- Tabs            = 0     
-
-I have chosen to write my code in order to count the value of blank space, new line and tab.
-The program was running on forever, so therefor I included a "quit" possibility so the user  
-could end when he feels done with the task.
-
-Under you can see the build up, I started to declare the different variables i was going to use. Then I wrote a while loop that would run continuously while the program was initiated, in this while loop the program would count every *blankspace* *Newlines* and *tabs* used while the program was running.
-
-
-```
-Counting the value of tab, new line and blank space usage.  
-Use q to end the program.
-.  
-.  
-.  
-.  
-.    
-Blanks: 10, Newlines: 22, Tabs: 14 .  
-The total value Blanks: 50, Newline: 22 and Tabs: 0 .
-```
-code:
-```c++
-#include <stdio.h>
-
-int main(void){
-	//declearing c, nl, ns, nt as int
-	int c, nl, ns, nt, lval, sval, tval;
-	// giving them 0 as starting value
-	nl=0;
-	ns=0;
-	nt=0;
-	//setting the value of tab, new line and blank spaces
-	lval=1;
-	sval=5;
-	tval=0;
-	printf("Counting the value of tab, new line and blank space usage.\n");
-	// starting a while loop so my program reads when i type the different keys.
-	while((c = getchar()) != EOF)	{
-	// reading the typings
-		if (c == '\n')
-			++nl;
-		if(c == '\t')
-			++nt;
-		if(c == ' ')
-			++ns;
-	}
-		lval= nl*lval;
-		sval= ns*sval;
-		tval= nt*tval;
-		//printing out a sentence and the count value for Newline, Space and Tab
-		printf("Blanks: %d, Newlines: %d, Tabs: %d  ." , ns, nl, nt);
-		//printing out the total value of Newline, Space and tab
-		printf("The total value Blanks: %d, Newline: %d and Tabs: %d .", sval, lval, tval);
-		return 0;
-	}
-```
-
-##Problem four
-###Write a C or C++ program that counts the *number of words* in a given sentence.
-
-My program lets the user type in a text sentence, when the sentence is typed in it counts how many words are used.
-
-Starting my code with including the string.h library and giving the int main a character array so it could store the characters from the text written into console.
-declaring count and a i value so i have a place to store these values. Using a for loop to store the words and count the number of words plus value in the end
-
-```
-Enter the text string
-Hello world
-Number of words in given text string are : 2
-```
-
-code:
-```c++
-#include <stdio.h>
-#include <string.h>
-
-
-
-		// setting up my main
-	int main(void){
-		// declaring char s and int count,i
-	char s[200];
-	int count = 0; 
-	int i;
-		//Starting my program with a text sentence so user know hos to use program
-	printf("Enter the text string\n");
-		//scanning for words typed
-	scanf("%[^\n]s",s);
-		// for loop for counting words
-	for (i = 0; s[i] != '\0';i++)
-	{
-	if (s[i] == ' ')
-	count++;
-	}
-		//printing out last sentence with number of words typed
-	printf("Number of words in given text string are : %d\n", count + 1);
-	return 0;
-		  }
-```
-
-##Problem five
-###Write a program in either C or C++ that prints the following *pattern*.  
-  1    
-  1 2    
-  1 2 3    
-  1 2 3 4    
-  1 2 3 4 5  
-
-This pattern program use two *for loops*, the first for loop give the pattern a *Newline* and rows,  
-while the second counts the numbers. 
-Here i also gave the value to *rader/rows*
-```
-how many rows with numbers do you want?
-6  
-1  
-1 2  
-1 2 3  
-1 2 3 4  
-1 2 3 4 5  
-1 2 3 4 5 6  
-```
-
-code:
 ```c++
 
 #include <iostream>
-
- // Using namespace so i dont have to use std>>,std<< in my programming code
 using namespace std;
-//declaring and setting up main
-int main()
+
+int main(void)
 {
+	int array[10], i=0, j=0, n, t;
 
-	//declaring integer i,j and rader
-	int i,j,rader;
-	//writing out to console
-	cout<<"how many rows with numbers do you want? \n";
-	//reading from the console, readed value goes to rader
-	cin>>rader;
-	//setting up two for loops so it counts and starts a new line with more numbers
-	for(i=0;i<=rader;++i)
-		{ for (j=0;j<=i;++j)
-			{
-				
-				cout<<j<<" ";
-			}
-
-			cout<<"\n";
-		}
-		//returning value
-		return 0;
-	}
-```
-##Problem six
-###Write a C++ function which takes a *single integer* parameter, and returns the boolean *”True”* if the given number is even and *”False”* otherwise.
-
-Wrote a code in c++ to check whether the given number is odd or even, so that users can write a number into console and get an answer back if it is odd or Even.
-```
-Please enter a number.
-28
-is an even number.
-
-Please enter a number.
-33
-is an odd number.
-```
-code:
-```c++
-#include <iostream>
-#include <iomanip>
-// using namespace std so i dont have to use std<<, std>> in code.
-using namespace std;
-//getting the function IsEven.
-void IsEven(int num);
-
-int main()
-{//declaring num as integer
-	int num;
- //writing to console, asking for user to type in number to check.
-	cout<<"Please enter a number."<<endl;
-	//Reading typed number from console.
-	cin >>num;
-// checking if number is "Even"
-	IsEven(num);
-	// if sentence to choose if it true or false
-	if(numIsEven = true)
-		cout << num << " is an even number."<< endl;
-	else
-		cout << num << " is an odd number. " <<endl;
-//returning value
-	return 0;
-}
-//IsEven function
-void IsEven(int num)
-{
-	bool numIsEven = false;
-}
-```
-##Problem seven
-###In number theory, a *perfect number* is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself.  The *smallest* perfect number is `6`, which is the sum of `1`, `2`, and `3`. Other perfect numbers are `28`, `496`, and `8,128`.  Write a program in either C or C++ to print all *perfect numbers* in given range using a function.
-
-To pick out the *perfect numbers* I used two for loops to pick out the right numbers.
-```
-Enter any number to print perfect number up to: 100000
-All Perfect numbers between 1 to 100000
-6 is Perfect Number.
-28 is Perfect Number.
-496 is Perfect Number.
-8128 is Perfect Number.
-```
-
-code:
-```c++
-#include <iostream>
-using namespace std;
-int main()
-{
-	int i, j, n, sum = 0;
-
-
-	cout<<"Enter any number to print perfect number up to: ";
+	cout<< "\n Enter the number of elements: ";
 	cin>>n;
+	cout<<"\n ";
 
-
-
-	cout<<"All Perfect numbers between 1 to "<<n<<endl;
-
-
-	for(i=1; i<=n; i++)
+	for (i = 0; i <n; i++)
 	{
-		sum = 0;
+		cout<<"\n Enter the "<<i+1<<"th element: ";
+		cin>>array[i];
+	}
 
-		for(j=1; j<i; j++)
+	for (j=0 ; j<(n-1) ; j++)
+	{
+		for (i=0 ; i<(n-1) ; i++)
 		{
-			if(i%j==0)
+			if (array[i+1] < array[i])
 			{
-				sum += j;
+				t = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = t;
 			}
 		}
+	}
+
+	cout<<"\n Ascending order: ";
+	for (i=0 ; i<n ; i++)
+	{
+		cout<<array[i]<<" ";
+	
+	}
+
+	cout<<"\n Descending order: ";
+	for (i=n ; i>0 ; i--)
+	{
+		cout<<array[i-1]<<" ";
+	}
+
+      
+      return 0;
+}
 
 
-		if(sum == i)
+```
+##Problem 2
+###Write a C++ program to sort string (name) in an alphabetical order. For example if a user enters a string "bye", then the 
+###output of the program will be "bey".
+
+```c++
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main(){
+	string text;
+	cout<<"Please enter a string text: ";
+	getline(cin, text);
+	cout<<"You wrote: "<<text<<endl;
+	sort(text.begin(), text.end());
+	cout<<"Sorted in right order: "<<text<<endl;
+
+	return 0;
+}
+
+```
+##Problem 3
+###Allocation and deallocation of mono-dimensional and bi-dimensional arrays represented by pointers.
+
+##a)
+###Declare and implement a function CreateArray(...) that returns a pointer to an array of n integers.
+```
+int* createArray(int n){
+	int* tom = new int[n];
+	return tom;
+}
+```
+##b)
+###Declare and implement a function DeleteArray(...) that takes and deletes an array of integers.
+```
+void deleteArray(int* array)
+{
+	delete[] array;
+
+}
+```
+```c++
+#include <iostream>
+int* createArray(int n);
+void deleteArray(int* array);
+int main(int argc, char const *argv[])
+{
+	int n;
+	int* peker;
+	std::cout<<"please enter number of rows for array: "<<std::endl;
+	std::cin>>n;
+	createArray(n);
+	peker= createArray(n);
+	std::cout<<"your adress is: "<<peker<<std::endl;
+	deleteArray(peker);
+
+	return 0;
+}
+int* createArray(int n){
+	int* tom = new int[n];
+	return tom;
+}
+void deleteArray(int* array)
+{
+	delete[] array;
+
+}
+```
+##c)
+###Declare and implement a function CreateMatrix(...) that returns a pointer to an array of arrays of n × m floats.
+```
+float** createMatrix(int c, int r)
+{
+	float** matrixP = new float*[c];
+	for (int i = 0; i < c; ++i)
+	{
+		matrixP[i] = new float[r]; 
+	}
+	return matrixP;
+}
+```
+##d)
+###Declare and implement a function Deletematrix(...) that takes and deletes this kind of matrix.
+```
+void deleteMatrix (float** fjern, int c)
+{
+	
+	for (int i = 0; i < c; ++i)
+	{
+		delete[] fjern[i];
+	}
+
+	delete[] fjern;
+}
+```
+##e)
+###Declare and implement  a  function  DisplayMatrix(...)  that  displays  the  address  of  the matrix of floats in the memory and all its elements.
+```
+void displayMatrix(float** matrise, int p, int o)
+{
+	for (int i = 0; i < p; ++i)
+	{
+		std::cout<<std::endl;
+
+		for (int j = 0; j < o; ++j)
 		{
-			cout<<i<<" is Perfect Number."<<endl;
+			std::cout<<&matrise[i][j]<<" ";
 		}
 	}
-
+	
+}
+```
+```c++
+#include <iostream>
+float** createMatrix(int c, int r);
+void deleteMatrix (float** fjern, int c);
+void displayMatrix (float** matrise, int p, int o);
+int main()
+{
+	int a,b;
+	float** arrayP;
+	std::cout<<"Enter value of rows and columns: "<<std::endl;
+	std::cin>>a>>b;
+	arrayP=createMatrix(a,b);
+	std::cout<<arrayP<<std::endl;
+	displayMatrix(arrayP,a,b);
+	deleteMatrix(arrayP,a);
+	
 	return 0;
-} 
-```
-
-##Problem eight
-###In mathematics, a *triangle* is a polygon with *three edges and three vertices*. Triangles can be classified according to the lengths of their sides.  
-
-• An **equilateral** triangle has all sides the same length.  
-• An **isosceles** triangle has two sides of equal length.  
-• A **scalene** triangle has all its sides of different lengths.  
-
-###Write a program either in C or C++ that checks whether a given triangle is `equilateral`, `isosceles` or `scalene`.  
-The program let the user type in three integers, then it compairs the integers in if statements and picks out the right statement depending on if two or more are alike.
-
-```
-Enter the sides of a triangle:
-4  
-3  
-5  
-The triangle is scalene
-
-Enter the sides of a triangle:
-4
-4
-5
-The triangle is isosceles
-
-Enter the sides of a triangle:
-5  
-5  
-5  
-The triangle is equilateral
-```
-
-code:
-
-```c++
-#include <iostream>
-//using namespace std so i dont have to use it in the rest of the code
-using namespace std;
-// setting up main
-int main()
+}
+float** createMatrix(int c, int r)
 {
-	//declaring a,b and c as integer
-int a,b,c;
-	// Asking the user to choose the three sides
-cout<<"Enter the sides of a triangle:"<<endl;
-	//reading the three values form console
-cin>>a>>b>>c;
-
-	//writing a if sentence to look for 2 sides that alike
-
-if((a==b) && (b==c))
+	float** matrixP = new float*[c];
+	for (int i = 0; i < c; ++i)
 	{
-		cout<<"\n The triangle is isosceles"<<endl;
-}
-	//writing an else if all three sides are the same
-else if((a==c) || (b==c) || (a==b)){
-	cout<<"The triangle is equilateral"<<endl;
-}
-
-else
-	//if all sides are of different length
-	cout<<"The triangle is scalene"<<endl;
-
-
-return 0;
-
-
-}
-```
-##Problem nine
-###In mathematics, the *Fibonacci numbers* are the sequence of numbers **{Fn}8n=1** defined by the linear recurrence equation **Fn=Fn-1+Fn-2** with **F1 = F2 = 1**, and conventionally defining F0 = 0. The first few *Fibonacci numbers* are *1, 1, 2, 3, 5, 8,13, 21,...etc*. Implement a C++ function to compute and display the first *n numbers* of the *Fibonacci list*, where n is provided as an input by the user.
-
-This program starts with letting the user type in an positiv number, this number lets the code know how long it would search for numbers for the *Fibonacci Series*.
-```
-Enter a positive number:
-24
-Fibonacci Series: 1 1 2 3 5 8 13 21
-```
-
-code:
-
-```c++
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-	int t1=1, t2 =1, nextTerm = 0, n;
-	cout << "Enter a positive number: ";
-	cin >> n;
-
-	cout << "Fibonacci Series: " << t1 <<"," << t2 <<",";
-	nextTerm = t1 + t2;
-	while(nextTerm <= n)
-	{
-		cout << nextTerm << ", ";
-		t1 = t2;
-		t2 = nextTerm;
-		nextTerm = t1 + t2;
+		matrixP[i] = new float[r]; 
 	}
-	return 0;
+	return matrixP;
 }
-```
-##Problem 10
-###Implement two C++ functions called **swap_1(int, int)** and **swap_2(int&, int&)** that are supposed to *swap* two values. Display the final values just before the end of each function, and display the results from the main function before and after the call. What do you make of these two functions?
-
-This code tries to swap values, and is written to test two different swap functions.
-
-The test is shown below:
-```
-Value before swap a: 10
-Value before swap b: 50
-Value after swap a: 10
-Value after swap b: 50
-New value
-Value before swap a: 10
-Value before swap b: 50
-Value after swap a: 50
-Value after swap b: 10
-```
-
-code:
-```c++
-#include <iostream>
-//using namespace, so i dont have to use std in rest of the code
-using namespace std;
-//creating functions swap_1 and swap_2, one without references
-void swap_1(int a,int b);
-void swap_2(int &a, int &b);
-//creating main to run code in
-int main()
+void deleteMatrix (float** fjern, int c)
 {
-	//giving int a and b values so they can swap. choose different values!
-	int a =10;
-	int b = 50;
-	//writing to console the original value of a and b
-	cout << "Value before swap a:" << a <<endl;
-	cout << "Value before swap b:" << b <<endl;
-	swap_1(a,b);
-	cout << "Value after swap a:" << a <<endl;
-	cout << "Value after swap b:" << b <<endl;
-	//giving console a seperation text so i can see det difference easier
-	cout << "New value"<<endl;
-	cout << "Value before swap a:" << a <<endl;
-	cout << "Value before swap b:" << b <<endl;
-	//using swap_2 to switch the a and b value
-	swap_2(a,b);
-	//writing new switched values to console
-	cout << "Value after swap a:" << a <<endl;
-	cout << "Value after swap b:" << b <<endl;
-	//returning the values
-	return 0;
+	
+	for (int i = 0; i < c; ++i)
+	{
+		delete[] fjern[i];
+	}
+
+	delete[] fjern;
 }
-//swap_1 function that store int temp,a and b
-void swap_1(int a, int b){
-	int temp = a;
-	a=b;
-	b=temp;
-}
-//swap_2 function that also store a int temp, a and b value
-void swap_2(int &a, int &b){
-	int temp = a;
-	a = b;
-	b=temp;
+void displayMatrix(float** matrise, int p, int o)
+{
+	for (int i = 0; i < p; ++i)
+	{
+		std::cout<<std::endl;
+
+		for (int j = 0; j < o; ++j)
+		{
+			std::cout<<&matrise[i][j]<<" ";
+		}
+	}
+	
 }
 ```
+##Problem 4
+##a)
+###Declare and implement a function DisplayPointerInfo(...) which displays on screen the address of the first element of an array represented by a pointer. If multiple elements of the array exist, then display the address of all the values represented by a pointer.
+```c++
+
+```
+##b)
+###To test the DisplayPointerInfo(...)function, declare two integer pointers a and b to dynamically allocate arrays of integers for n elements (n should be an input from the user).
+###Array a will be filled with even numbers, and array b will be filled with odd numbers.
+
+##Problem 5
+###Define an int* pointer variable a. Then:
+##a)
+###Use new to make a point to a dynamic array of 5 cells of type int.
+##b)
+###Write a loop to fill a with values 5, 7, 16, 12, 15.
+##c)
+###Using Hex, print the pointer address stored in a.
+##d)
+###Write a loop to print the values in a with one cell per line.
+##e)
+###Delete the dynamic memory allocated to a using delete [ ].
+
+##Problem 6
+###Define a struct named Date to keep track of dates. Provide functions that read dates from an input and finally display dates as an output.
+
+##Problem 7
+###Write a C++ program with a class having two private variables and one member function which will return the area of a triangle.
+
+##Problem 8
+###Write a C++ program with a class that takes 10 input integers in the main function and pass them to the default constructor of the class. 
+Finally, your program should return (display)the sum of the 10 input numbers.
+
+##Problem 9
+###Perform addition operation on complex data using class and object. 
+###The program should ask for real and imaginary part of two complex numbers, and display the real and imaginary parts of their sum.
+##Problem 10
+###Write the definition for a class called Distance that has data member feet as integer and inches as float. The class has the following member functions:
+###void set(int, float) to give value to object void disp() to display distance in feet and inches Distance add(distance) to sum two distances & return distance
+###Write a main function to create three distance objects. Set the value in two objects and call add() to calculate sum and assign it in the third object. 
+###Finally, display all distances.
