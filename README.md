@@ -55,8 +55,7 @@ int main(void)
 
 ```
 ##Problem 2
-###Write a C++ program to sort string (name) in an alphabetical order. For example if a user enters a string "bye", then the 
-###output of the program will be "bey".
+###Write a C++ program to sort string (name) in an alphabetical order. For example if a user enters a string "bye", then the output of the program will be "bey".
 
 ```c++
 #include <iostream>
