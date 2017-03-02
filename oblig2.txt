@@ -317,6 +317,58 @@ int main()
 ##Problem 6
 ###Define a struct named Date to keep track of dates. Provide functions that read dates from an input and finally display dates as an output.
 ```c++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+ struct _Date {
+int day;
+string month;
+int year;
+}date;
+
+void readDate (_Date Date);
+int main()
+{ 
+	int mo,days;
+	string m[12]={"January","February","March","April","May","June","July","August","September","October","November","December"};
+	int d[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+
+	cout<<"Type in the date:"<<endl;
+	cin>>days;
+	cout<<"Type in month:\n";
+	cin>>mo;
+	cout<<"Type in year:\n";
+	cin>>date.year;
+
+	while(mo>12){	
+		cout<<"There are not more than 12 months!\n Try again"<<endl;
+		cout<<"Type in month:\n";
+		cin>>mo;
+		break;
+	}
+
+	while(days!=d[mo-1]){
+		cout<<"There are not "<<days<<" in this month"<<endl;		
+		cout<<"Type in the date:"<<endl;
+		cin>>days;
+		break;
+	}
+			
+	date.day = days;
+	date.month=m[mo-1];
+	
+	cout<<"You typed in :"<<endl;
+	readDate (date);
+
+	return 0;
+}
+void readDate (_Date Date)
+{
+	cout<<Date.day<<". "<<Date.month<<". "<<Date.year<<endl;
+	
+}
 
 ```
 
@@ -368,24 +420,43 @@ The code:
 using namespace std;
 
 class data{
+private:
+	int* m_array;
+	int m_N;
 public:
-	int array[10];
-	data(int* arrayP){
-		arrayP=array[10];
-		cout <<"numbers initialized \n";
+	
+	data (int* arrayP, int N)
+	{
+	 m_array = arrayP;	
+	 m_N = N;
 	}
-	int sum_num(){return ++array[10];}
+	int sum_num(){
+		int sum = 0;
+		for(int i=0; i<m_N; i++){
+			sum+= m_array[i];
+		}
+		return sum;
+	}	
 };
 int main (){
 
 	int num[10];
-	cout<<"Enter ten integers : ";
+	cout<<"Enter ten integers: \n";
 	for (int i = 0; i < 10; ++i)
 	{
 		cin>>num[i];
-	}
-	data set_nu(num[i]);
-	cout << "The addition result on:"<< set_nu.sum_num()<<"\n";	
+	}	
+
+	data su_num(num, 10); // lager m_array lik num og m_N = 10
+
+	cout << "The addition result from numbers: "<<endl;
+	for (int i = 0; i < 10; ++i)
+	 {
+	 	cout<<num[i]<<" ";
+	 } 
+	cout <<"Is "<<su_num.sum_num()<<"\n";
+
+	
 	return 0;
 }
 
@@ -407,6 +478,7 @@ public:
 		x=nx;y=ny;
 	}
 };
+
 int main(){
 	//First number
 	double a,b;	
@@ -414,7 +486,7 @@ int main(){
 	cin>> a;
 	cout<< "Now enter the imaginary part:";
 	cin>> b;
-	Imaginary number1(nu1,nu2);
+	Imaginary number1(a,b);
 	//Second number
 	double c,d;
 	cout<<"Second number. \n"<< "Enter the real part:";
@@ -423,9 +495,13 @@ int main(){
 	cin>> d;
 	
 	Imaginary number2(c,d);
+
 	double real;
+
 	real = number1.x +number2.x;
+
 	double imaginary;
+
 	imaginary = number2.x + number1.y;
 
 	cout << "the sum of the real parts is "<< real << "\n";
