@@ -220,13 +220,15 @@ void displayMatrix(float** matrise, int p, int o)
 ##Problem 4
 ##a)
 ###Declare and implement a function DisplayPointerInfo(...) which displays on screen the address of the first element of an array represented by a pointer. If multiple elements of the array exist, then display the address of all the values represented by a pointer.
-```c++
 
-```
 ##b)
 ###To test the DisplayPointerInfo(...)function, declare two integer pointers a and b to dynamically allocate arrays of integers for n elements (n should be an input from the user).
 ###Array a will be filled with even numbers, and array b will be filled with odd numbers.
 
+The code
+```c++
+
+```
 ##Problem 5
 ###Define an int* pointer variable a. Then:
 ##a)
@@ -260,6 +262,8 @@ cout<<"the numbers you have written is:\n";
 ```
 delete[] a;
 ```
+
+The code:
 ```c++
 #include <iostream>
 
@@ -286,6 +290,8 @@ int main()
 ```
 ##Problem 6
 ###Define a struct named Date to keep track of dates. Provide functions that read dates from an input and finally display dates as an output.
+
+The code:
 ```c++
 #include <iostream>
 #include <string>
@@ -321,6 +327,8 @@ void readDate (_Date Date)
 ```
 ##Problem 7
 ###Write a C++ program with a class having two private variables and one member function which will return the area of a triangle.
+
+The code:
 ```c++
 #include <iostream>
 
@@ -330,9 +338,7 @@ class Triangle{
 	float height, width;
 public:
 	void set_values (int,int);
-	float area() {return (width*height)/2;}
-	
-	
+	float area() {return (width*height)/2;}	
 
 };
 void Triangle::set_values(int x, int y){
@@ -359,6 +365,8 @@ int main()
 ##Problem 8
 ###Write a C++ program with a class that takes 10 input integers in the main function and pass them to the default constructor of the class. 
 Finally, your program should return (display)the sum of the 10 input numbers.
+
+The code:
 ```c++
 #include <iostream>
 using namespace std;
@@ -394,6 +402,8 @@ int main (){
 ##Problem 9
 ###Perform addition operation on complex data using class and object. 
 ###The program should ask for real and imaginary part of two complex numbers, and display the real and imaginary parts of their sum.
+
+The code:
 ```c++
 #include <iostream>
 using namespace std;
@@ -444,6 +454,8 @@ int main(){
 ###void set(int, float) to give value to object void disp() to display distance in feet and inches Distance add(distance) to sum two distances & return distance
 ###Write a main function to create three distance objects. Set the value in two objects and call add() to calculate sum and assign it in the third object. 
 ###Finally, display all distances.
+
+The code:
 ````c++
 #include <iostream>
 
