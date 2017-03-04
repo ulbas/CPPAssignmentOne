@@ -3,7 +3,7 @@
 ##Problem 1
 ####Write a C++ program to sort an array of numbers in an ascending order and descending order based on user’s choice and display them.
 
-Here I use array[10] to store ten values, then I check the values that are typed in using for loop to put them in the right order, and at last I use **for loop** to display the values in right order **(acsending and descending)**.
+Here I use array[10] to store ten values, then I check the values that are typed in using for loop to put them in the right order, and at last I used **for loop** to display the values in right order **(acsending and descending)**.
 
 What i got in cmder:
 ```
