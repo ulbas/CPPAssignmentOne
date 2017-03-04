@@ -3,6 +3,30 @@
 ##Problem 1
 ####Write a C++ program to sort an array of numbers in an ascending order and descending order based on user’s choice and display them.
 
+Here I use array[10] to store ten values, then I check the values that are typed in using for loop to put them in the right order, and at last I use **for loop** to display the values in right order **(acsending and descending)**.
+
+What i got in cmder:
+```
+ Enter the number of elements: 6
+
+
+ Enter the 1th element: 7
+
+ Enter the 2th element: 4
+
+ Enter the 3th element: 5
+
+ Enter the 4th element: 8
+
+ Enter the 5th element: 15
+
+ Enter the 6th element: 18
+
+ Ascending order: 4 5 7 8 15 18
+ Descending order: 18 15 8 7 5 4
+
+```
+The code:
 ```c++
 
 #include <iostream>
@@ -56,6 +80,12 @@ int main(void)
 ```
 ##Problem 2
 ###Write a C++ program to sort string (name) in an alphabetical order. For example if a user enters a string "bye", then the output of the program will be "bey".
+What i got in cmder:
+```
+Please enter a string text: right
+You wrote: right
+Sorted in right order: ghirt
+```
 
 ```c++
 #include <iostream>
@@ -77,9 +107,30 @@ int main(){
 ```
 ##Problem 3
 ###Allocation and deallocation of mono-dimensional and bi-dimensional arrays represented by pointers.
+I separated Exercise 3 in two parts problem a and b as one code and c,d and e on another code since the problem was to write to a bigger array than in a.
 
+What i got in cmder in the first code:
+```
+please enter number of rows for array:
+4
+your adress is: 0x1001db8
+```
+What i got in cmder in the second code:
+```
+Enter value of rows and columns:
+4
+4
+The value of the first element is: 0x761da8
+
+
+0x761dc0 0x761dc4 0x761dc8 0x761dcc
+0x761dd8 0x761ddc 0x761de0 0x761de4
+0x761df0 0x761df4 0x761df8 0x761dfc
+0x7619b0 0x7619b4 0x7619b8 0x7619bc
+```
 ##a)
 ###Declare and implement a function CreateArray(...) that returns a pointer to an array of n integers.
+Problem a I solved by setting up a function like the one under, letting the function make a array with **n** integers.
 ```
 int* createArray(int n){
 	int* tom = new int[n];
@@ -88,6 +139,7 @@ int* createArray(int n){
 ```
 ##b)
 ###Declare and implement a function DeleteArray(...) that takes and deletes an array of integers.
+Here I solved it by creating an **void deleteArray** since it dont return values, **delete[] array** will clear the space inside the array.
 ```
 void deleteArray(int* array)
 {
@@ -95,6 +147,7 @@ void deleteArray(int* array)
 
 }
 ```
+The code for a and b:
 ```c++
 #include <iostream>
 int* createArray(int n);
@@ -124,6 +177,9 @@ void deleteArray(int* array)
 ```
 ##c)
 ###Declare and implement a function CreateMatrix(...) that returns a pointer to an array of arrays of n × m floats.
+Here I did almost the same as in *a*, i made an function **float createMatrix** with two int's c and r to use in the for loops so i can make **array c x r**.
+Returning the value of matrixP to use in **main**
+
 ```
 float** createMatrix(int c, int r)
 {
@@ -137,6 +193,7 @@ float** createMatrix(int c, int r)
 ```
 ##d)
 ###Declare and implement a function Deletematrix(...) that takes and deletes this kind of matrix.
+Using for loops to delete the arrays, just like I created them. Since im not returning any values I use Void in the function:
 ```
 void deleteMatrix (float** fjern, int c)
 {
@@ -151,21 +208,24 @@ void deleteMatrix (float** fjern, int c)
 ```
 ##e)
 ###Declare and implement  a  function  DisplayMatrix(...)  that  displays  the  address  of  the matrix of floats in the memory and all its elements.
+
+Here I had to do almost the same as in c and d. But I had to use cout to make it display every element of the c x r array, since it's not returning any value, just text i can use void to declare my **displayMatrix** function
 ```
 void displayMatrix(float** matrise, int p, int o)
 {
 	for (int i = 0; i < p; ++i)
 	{
-		std::cout<<std::endl;
+		cout<<endl;
 
 		for (int j = 0; j < o; ++j)
 		{
-			std::cout<<&matrise[i][j]<<" ";
+			cout<<&matrise[i][j]<<" ";
 		}
 	}
 	
 }
 ```
+The code for c,d and e:
 ```c++
 #include <iostream>
 float** createMatrix(int c, int r);
@@ -233,11 +293,13 @@ The code
 ###Define an int* pointer variable a. Then:
 ##a)
 ###Use new to make a point to a dynamic array of 5 cells of type int.
+Here I have made a integer pointer to a new 5 integer array.
 ```
 int* a= new int[5];
 ```
 ##b)
 ###Write a loop to fill a with values 5, 7, 16, 12, 15.
+Letting the user type in the 5 values to store in the array. Using a for loop to make the user type in the right way.
 ```
 cout<<"Type in 5 values to the array: "<<endl;
 	for (int i = 0; i < 5; ++i)
@@ -250,15 +312,17 @@ cout<<"Type in 5 values to the array: "<<endl;
 ###Using Hex, print the pointer address stored in a.
 ##d)
 ###Write a loop to print the values in a with one cell per line.
+Using for loop to print the values, I also use a **&** in front of my array to print the hex values.
 ```
 cout<<"the numbers you have written is:\n";
 	for (int i = 0; i < 5; ++i)
 	{
-		cout<<hex<<&a[i]<<"\n";
+		cout<<&a[i]<<"\n";
 	}
 ```
 ##e)
 ###Delete the dynamic memory allocated to a using delete [ ].
+Deleting array a when the program have runned through using **delete[] a**
 ```
 delete[] a;
 ```
@@ -282,7 +346,7 @@ int main()
 	cout<<"the numbers you have written is:\n";
 	for (int i = 0; i < 5; ++i)
 	{
-		cout<<hex<<&a[i]<<"\n";
+		cout<<&a[i]<<"\n";
 	}
 	delete[] a;
 	return 0;
@@ -290,6 +354,7 @@ int main()
 ```
 ##Problem 6
 ###Define a struct named Date to keep track of dates. Provide functions that read dates from an input and finally display dates as an output.
+Setting up my struct with **day**, **month** and **year**. Letting the user type in the date in **(dd.mm.yyyy)** format, and transform the month from number to string text with month name. Giving the code a couple of while loop so the user is made to type in a valid day and month.
 
 The code:
 ```c++
@@ -327,6 +392,7 @@ void readDate (_Date Date)
 ```
 ##Problem 7
 ###Write a C++ program with a class having two private variables and one member function which will return the area of a triangle.
+Creating a class Triangle giving it two private floats, **height** and **width**. Then I made an float inside the class public to find the area of the triangle with the values it recieves from set_values. The user is the one choosing the height and width of the triangle.
 
 The code:
 ```c++
@@ -364,36 +430,52 @@ int main()
 ```
 ##Problem 8
 ###Write a C++ program with a class that takes 10 input integers in the main function and pass them to the default constructor of the class. 
-Finally, your program should return (display)the sum of the 10 input numbers.
+Finally, your program should return (display) the sum of the 10 input numbers.
 
+Letting the user type in 10 integers that is stored in an array in the class data. Here i also use sum_num to make a for loop to add togheter the ten integers to a final sum, returning the sum to write it out in main.
 The code:
 ```c++
 #include <iostream>
 using namespace std;
 
 class data{
+private:
+	int* m_array;
+	int m_N;
 public:
-	int array[10];
-	data(int* arrayP){
-		array[10]=arrayP[10];cout <<"numbers initialized \n";
+	
+	data (int* arrayP, int N)
+	{
+	 m_array = arrayP;	
+	 m_N = N;
 	}
-	int sum_num(){return ++array[10];}
+	int sum_num(){
+		int sum = 0;
+		for(int i=0; i<m_N; i++){
+			sum+= m_array[i];
+		}
+		return sum;
+	}	
 };
-
-
 int main (){
 
 	int num[10];
-	cout<<"Enter ten integers : ";
+	cout<<"Enter ten integers: \n";
 	for (int i = 0; i < 10; ++i)
 	{
 		cin>>num[i];
 	}
 	
 	
-	data set_nu(num[i]);
 
-	cout << "The addition result on:"<< set_nu.sum_num()<<"\n";
+	data su_num(num, 10); 
+
+	cout << "The addition result from numbers: "<<endl;
+	for (int i = 0; i < 10; ++i)
+	 {
+	 	cout<<num[i]<<" ";
+	 } 
+	cout <<"Is "<<su_num.sum_num()<<"\n";
 
 	
 	return 0;
@@ -412,7 +494,7 @@ class Imaginary{
 public:
 
 	double x,y;
-	Imagin(double nx, double ny){
+	Imaginary(double nx, double ny){
 		x=nx;y=ny;
 	}
 };
@@ -424,7 +506,7 @@ int main(){
 	cin>> a;
 	cout<< "Now enter the imaginary part:";
 	cin>> b;
-	Imaginary number1(nu1,nu2);
+	Imaginary number1(a,b);
 	//Second number
 	double c,d;
 	cout<<"Second number. \n"<< "Enter the real part:";
@@ -454,6 +536,8 @@ int main(){
 ###void set(int, float) to give value to object void disp() to display distance in feet and inches Distance add(distance) to sum two distances & return distance
 ###Write a main function to create three distance objects. Set the value in two objects and call add() to calculate sum and assign it in the third object. 
 ###Finally, display all distances.
+
+Here I used class Distance to set int feet and float inches private, then I gave the class a public with setdist to recieve feet and inches values from cin in main. Then I made a couple of functions to define members outside the class itself, one that adds togheter inches and feet, and one to display the values in console when they're added togheter. In main I give the user the possibility to type inn two inches values, and two feet values. I made default constructors distance1, distance2 and distance3 so the users typed values can be used in class, and so main can write out the values again in console.
 
 The code:
 ````c++
