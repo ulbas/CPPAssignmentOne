@@ -79,14 +79,17 @@ int main(void)
 
 ```
 ##Problem 2
-###Write a C++ program to sort string (name) in an alphabetical order. For example if a user enters a string "bye", then the output of the program will be "bey".
+###Write a C++ program to sort string (name) in an alphabetical order. For example if a user enters a string `"bye"`, then the output of the program will be `"bey"`.
+
+I choosed to use string and algorithm libraries, so I hade the tools **getline** and **sort** to sort the string the user types in in console.
+
 What i got in cmder:
 ```
 Please enter a string text: right
 You wrote: right
 Sorted in right order: ghirt
 ```
-
+The code:
 ```c++
 #include <iostream>
 #include <string>
@@ -108,6 +111,8 @@ int main(){
 ##Problem 3
 ###Allocation and deallocation of mono-dimensional and bi-dimensional arrays represented by pointers.
 I separated Exercise 3 in two parts problem a and b as one code and c,d and e on another code since the problem was to write to a bigger array than in a.
+
+Im letting the user type in the size of the array, then the program types out the adress of the element.
 
 What i got in cmder in the first code:
 ```
@@ -178,7 +183,7 @@ void deleteArray(int* array)
 ##c)
 ###Declare and implement a function CreateMatrix(...) that returns a pointer to an array of arrays of n × m floats.
 Here I did almost the same as in *a*, i made an function **float createMatrix** with two int's c and r to use in the for loops so i can make **array c x r**.
-Returning the value of matrixP to use in **main**
+Returning the value of matrixP to use in **main**.
 
 ```
 float** createMatrix(int c, int r)
@@ -354,7 +359,8 @@ int main()
 ```
 ##Problem 6
 ###Define a struct named Date to keep track of dates. Provide functions that read dates from an input and finally display dates as an output.
-Setting up my struct with **day**, **month** and **year**. Letting the user type in the date in **(dd.mm.yyyy)** format, and transform the month from number to string text with month name. Giving the code a couple of while loop so the user is made to type in a valid day and month.
+
+Setting up my struct with **day**, **month** and **year**. Letting the user type in the date in **(dd.mm.yyyy)** format, and transform the month from number to string text with month name. Giving the code a couple of while loop so the user is made to type in a valid day and month, so we dont get more days then there is in the particular month.
 
 The code:
 ```c++
@@ -371,13 +377,34 @@ int year;
 
 void readDate (_Date Date);
 int main()
-{
-	cout<<"Type in the date of the month: ";
-	cin>>date.day;
-	cout<<"\nType in the month: ";
-	cin>>date.month;
-	cout<<"\nType in the year: ";
+{ 
+	int mo,days;
+	string m[12]={"January","February","March","April","May","June","July","August","September","October","November","December"};
+	int d[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+
+	cout<<"Type in the date:"<<endl;
+	cin>>days;
+	cout<<"Type in month:\n";
+	cin>>mo;
+	cout<<"Type in year:\n";
 	cin>>date.year;
+
+	while(mo>12){	
+		cout<<"There are not more than 12 months!\n Try again"<<endl;
+		cout<<"Type in month:\n";
+		cin>>mo;
+		break;
+	}
+
+	while(days>=d[mo-1]){
+		cout<<"There are not "<<days<<" in this month"<<endl;		
+		cout<<"Type in the date:"<<endl;
+		cin>>days;
+		break;
+	}
+			
+	date.day = days;
+	date.month=m[mo-1];
 	
 	cout<<"You typed in :"<<endl;
 	readDate (date);
@@ -392,8 +419,19 @@ void readDate (_Date Date)
 ```
 ##Problem 7
 ###Write a C++ program with a class having two private variables and one member function which will return the area of a triangle.
+
 Creating a class Triangle giving it two private floats, **height** and **width**. Then I made an float inside the class public to find the area of the triangle with the values it recieves from set_values. The user is the one choosing the height and width of the triangle.
 
+What i got in cmder:
+```
+This program will find the area of an Triangle.
+Type in the height: 5
+
+Type in the width: 7
+
+The height the triangle is: 5 and the width is: 7
+The area of the Triangle is then: 17.5
+```
 The code:
 ```c++
 #include <iostream>
@@ -433,6 +471,24 @@ int main()
 Finally, your program should return (display) the sum of the 10 input numbers.
 
 Letting the user type in 10 integers that is stored in an array in the class data. Here i also use sum_num to make a for loop to add togheter the ten integers to a final sum, returning the sum to write it out in main.
+
+What I get in cmder:
+```
+Enter ten integers:
+421
+512
+421
+3412
+5
+15123
+43124
+32152
+123
+415
+The addition result from numbers:
+421 + 512 + 421 + 3412 + 5 + 15123 + 43124 + 32152 + 123 + 415 = 95708
+```
+
 The code:
 ```c++
 #include <iostream>
@@ -464,19 +520,20 @@ int main (){
 	for (int i = 0; i < 10; ++i)
 	{
 		cin>>num[i];
-	}
-	
-	
+	}	
 
 	data su_num(num, 10); 
 
 	cout << "The addition result from numbers: "<<endl;
 	for (int i = 0; i < 10; ++i)
-	 {
-	 	cout<<num[i]<<" ";
+	 {	
+	 	if(i<9){
+	 	cout<<num[i]<<" + ";
+	 }
+	 else
+	 cout<<num[i]<<" = ";
 	 } 
-	cout <<"Is "<<su_num.sum_num()<<"\n";
-
+	cout<<su_num.sum_num()<<"\n";
 	
 	return 0;
 }
@@ -484,6 +541,20 @@ int main (){
 ##Problem 9
 ###Perform addition operation on complex data using class and object. 
 ###The program should ask for real and imaginary part of two complex numbers, and display the real and imaginary parts of their sum.
+
+In my code I made a class Imaginary to store det values, did most off mye code in the main. Used a double to create and store the real values and made som simple addition variables to put the values togheter to a final sum.
+
+What I got in cmder console:
+```
+First number.
+Enter the real part:5
+Now enter the imaginary part:3
+Second number.
+Enter the real part:4
+Now enter the imaginary part:2
+the sum of the real parts is 9
+the sum of the imaginary parts is 7
+```
 
 The code:
 ```c++
@@ -539,6 +610,20 @@ int main(){
 
 Here I used class Distance to set int feet and float inches private, then I gave the class a public with setdist to recieve feet and inches values from cin in main. Then I made a couple of functions to define members outside the class itself, one that adds togheter inches and feet, and one to display the values in console when they're added togheter. In main I give the user the possibility to type inn two inches values, and two feet values. I made default constructors distance1, distance2 and distance3 so the users typed values can be used in class, and so main can write out the values again in console.
 
+What i get in cmder:
+```
+Type in the first feet value: 15
+
+Type in the first inch value: 6
+
+Type in the second feet value: 17
+
+Type in the second inch value: 32
+
+ distance 1 = 15' 6"
+ distance 2 = 17' 32"
+ distance 3 = 33' 26"
+```
 The code:
 ````c++
 #include <iostream>
