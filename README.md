@@ -286,12 +286,139 @@ void displayMatrix(float** matrise, int p, int o)
 ##a)
 ###Declare and implement a function DisplayPointerInfo(...) which displays on screen the address of the first element of an array represented by a pointer. If multiple elements of the array exist, then display the address of all the values represented by a pointer.
 
+Here I used one function to set up an array with **n** elements, displaying them by including the function **displayPointerInfo** letting the pointer A and n determine the size of the array in function.
+
+The code for a:
+```c++
+#include <iostream>
+
+using namespace std;
+void displayPointerInfo(int* array,int y);
+int main()
+{
+	int n;
+	int* A;
+	cout<<"Write the size of the array: ";
+	cin>>n;
+	A = new int[n];
+	displayPointerInfo(A,n);
+
+	return 0;
+
+}
+
+
+void displayPointerInfo(int* array,int y)
+{	
+	cout<<"The pointer adress of the first array element are: "<<&array[0]<<endl;
+	if(y>1){
+		int rest= y-1;
+	cout<<"\nThere is more than one element, here are the address of the last "<<rest<<" elements: \n";
+	for (int i = 1; i < y; ++i)
+	{
+		cout<<&array[y]<<endl;
+	}
+	}
+}
+```
 ##b)
 ###To test the DisplayPointerInfo(...)function, declare two integer pointers a and b to dynamically allocate arrays of integers for n elements (n should be an input from the user).
 ###Array a will be filled with even numbers, and array b will be filled with odd numbers.
 
-The code
+I give my code a couple of functions to do the task, **displayPointerInfo** and **displayElementValue** these two functions let me se that the dynamically allocate of array is fullfilled, I can now se that my two arrays have been filled, one with **even** and one with **odd**, the user chooses have many slots there are in the arrays with value **n**.
+
+What I get in cmder:
+```
+Write the size of the array: 4                                               
+The value of the first array                                                 
+                                                                             
+The number of the first array element are: 2                                 
+                                                                             
+There is more than one element, here are the numbers of the last 3 elements: 
+4 6 8                                                                        
+The pointer adress of the first element of the array are: 0x7019b0           
+                                                                             
+There is more than one element, here are the address of the last 3 elements: 
+0x7019c0                                                                     
+0x7019c0                                                                     
+0x7019c0                                                                     
+The value of the second array                                                
+                                                                             
+The number of the first array element are: 1                                 
+                                                                             
+There is more than one element, here are the numbers of the last 3 elements: 
+3 5 7                                                                        
+The pointer adress of the first element of the array are: 0x7019c8           
+                                                                             
+There is more than one element, here are the address of the last 3 elements: 
+0x7019d8                                                                     
+0x7019d8                                                                     
+0x7019d8                                                                     
+```
+
+The code:
 ```c++
+#include <iostream>
+
+using namespace std;
+
+void displayPointerInfo(int* array,int y);
+void displayElementValue(int* arra,int x);
+int* createArray(int t);
+
+int main()
+{
+	int n;
+	
+	cout<<"Write the size of the array: ";
+	cin>>n;
+	int *Aeven = createArray(n);
+	int *Bodd = createArray(n);
+	
+	for (int i = 0; i < n; ++i)
+	{
+		Bodd[i] = 2*i+1;
+		Aeven[i] = 2*i+2;
+	}
+
+
+	cout<<"The value of the first array"<<endl;
+	displayElementValue(Aeven,n);
+	displayPointerInfo(Aeven,n);
+	cout<<"The value of the second array"<<endl;
+	displayElementValue(Bodd,n);
+	displayPointerInfo(Bodd,n);
+	return 0;
+}
+
+int* createArray(int t){
+	int* tom = new int[t];
+	return tom;
+}
+void displayPointerInfo(int* array,int y)
+{	
+	cout<<"\nThe pointer adress of the first element of the array are: "<<&array[0]<<endl;
+	if(y>1){
+		int rest= y-1;
+	cout<<"\nThere is more than one element, here are the address of the last "<<rest<<" elements: \n";
+	for (int i = 1; i < y; i++)
+	{
+		cout<<&array[y]<<endl;
+	}	
+	}
+}
+void displayElementValue(int* arra,int x)
+{	
+	cout<<"\nThe number of the first array element are: "<<arra[0]<<endl;
+	if(x>1){
+		int rest= x-1;
+	cout<<"\nThere is more than one element, here are the numbers of the last "<<rest<<" elements: \n";
+	for (int j = 1; j < x; j++)
+	{		
+		cout<<arra[j]<<" ";
+	}	
+	}
+}
 
 ```
 ##Problem 5
