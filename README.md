@@ -698,13 +698,12 @@ In my code I made a class Imaginary to store det values, did most off mye code i
 What I got in cmder console:
 ```
 First number.
-Enter the real part:5
-Now enter the imaginary part:3
+Enter the real part:4
+Now enter the imaginary part:7
 Second number.
 Enter the real part:4
 Now enter the imaginary part:2
-the sum of the real parts is 9
-the sum of the imaginary parts is 7
+ real: 8 Imaginary: 11
 ```
 
 The code:
@@ -722,14 +721,14 @@ public:
 };
 
 int main(){
-	//First number
+	
 	double a,b;	
 	cout<<"First number. \n" << "Enter the real part:";
 	cin>> a;
 	cout<< "Now enter the imaginary part:";
 	cin>> b;
 	Imaginary number1(a,b);
-	//Second number
+	
 	double c,d;
 	cout<<"Second number. \n"<< "Enter the real part:";
 	cin>> c;
@@ -737,7 +736,7 @@ int main(){
 	cin>> d;
 	
 	Imaginary number2(c,d);
-
+	Imaginary number3(0,0);
 	double real;
 
 	real = number1.x +number2.x;
@@ -746,8 +745,10 @@ int main(){
 
 	imaginary = number2.x + number1.y;
 
-	cout << "the sum of the real parts is "<< real << "\n";
-	cout << "the sum of the imaginary parts is "<<imaginary;
+	number3.x = real;
+	number3.y = imaginary;
+	
+	cout<<" real: "<<number3.x<<" Imaginary: "<<number3.y;
 
 	return 0;
 }
