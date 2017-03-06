@@ -425,6 +425,19 @@ void displayElementValue(int* arra,int x)
 ###Define an int* pointer variable a. Then:
 ##a)
 ###Use new to make a point to a dynamic array of 5 cells of type int.
+
+What I got in cmder:
+```
+Type in 5 values to the array:
+5
+7
+16
+12
+15
+the numbers you have written is: 5 7 16 12 15
+0xe61da0 0xe61da4 0xe61da8 0xe61dac 0xe61db0
+```
+
 Here I have made a integer pointer to a new 5 integer array.
 ```
 int* a= new int[5];
