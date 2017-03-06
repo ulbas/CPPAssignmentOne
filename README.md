@@ -502,6 +502,17 @@ int main()
 
 Setting up my struct with **day**, **month** and **year**. Letting the user type in the date in **(dd.mm.yyyy)** format, and transform the month from number to string text with month name. Giving the code a couple of while loop so the user is made to type in a valid day and month, so we dont get more days then there is in the particular month.
 
+What I got in cmder:
+```
+Type in the date:
+14
+Type in month:
+5
+Type in year:
+1991
+You typed in :
+14. May. 1991
+```
 The code:
 ```c++
 #include <iostream>
