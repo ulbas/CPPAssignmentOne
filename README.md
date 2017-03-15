@@ -30,7 +30,7 @@ int calculate (int t){
 }
 
 ```
-##Exercise 2
+##Exercise 2  
 ###Write a C++ program that sorts strings in alphabetical order (from a to z).
 ```
 Please enter a sentence:  
@@ -58,7 +58,7 @@ int main()
 }
 
 ```
-##Exercise  3
+##Exercise  3  
 ###Write a C++ program using an array that can hold twenty integers which should be input from the user. Display those input values on the screen, and then prompt 
 the user for an element to be searched in this array. Finally, count the number of times the input element is foundin the array.
 ```
@@ -95,7 +95,7 @@ int main()
 }
 
 ```
-##Exercise 4
+##Exercise 4  
 ###Write a C++ program that creates a vector of 15 integer elements. Using an iterator, assign each element a value that is three times of its current value.
 ```
 You hav now stored the numbers:
@@ -143,7 +143,7 @@ int main()
 }
 
 ```
-##Exercise 5
+##Exercise 5  
 ###Write a C++ program that accepts five integer values from the user using pointers.
 ```
 Please enter your five values:
@@ -184,7 +184,7 @@ int main(int argc, char const *argv[])
 }
 
 ```
-##Exercise 6
+##Exercise 6  
 ###Write a C++ program that prints the elements of an array in a reverse order using pointers.
 ```
 Enter the size of the array:
@@ -227,7 +227,7 @@ int main()
 }
 
 ```
-##Exercise 7
+##Exercise 7  
 ###Write a C++ program that finds the maximum of an integral data set.   
 The program will first ask the user to input the number of data values in the set and   
 finally should display a pointer that points to the maximum value of the data set. 
@@ -275,7 +275,7 @@ int *findMax(int data[],int n){
 }
 
 ```
-##Exercise 8
+##Exercise 8  
 ###Write a C++ class having private variables and two member functions which will return the area of a rectangle and a triangle.
 ```
 Set the Height and Width for the area of the rectangle and the triangle:
@@ -328,7 +328,7 @@ int main()
 }
 
 ```
-##Exercise 9
+##Exercise 9  
 ###Write a C++ program that takes an input of two integers in the main function and pass them to a default constructor of the class. 
 Finally, display the result of an addition, subtraction, multiplication and division of the input integers.
 ```
@@ -396,7 +396,7 @@ int main()
 }
 
 ```
-##Exercise 10
+##Exercise 10  
 ###Write a C++ class named point that has three coordinates x,y, and z, where the coordinates are private.  
 Create a function which is external to the class that computes the dot product between the coordinates.  
 (Note: How do we access private members? Refer to the lecture slides on classes. Hint: friend functions)  
