@@ -1,5 +1,9 @@
 ##Exercise 1  
 ###Write a C++ program that calculates n^n by declaring your own function. Note: n is an input from the user.
+
+This exercise was easy to solve, I just let the user type in value n, value n was then sent to function calculate where i used a for loop to find `n^n`.
+
+Input and Output i cmder:
 ```
 Type in a value n to calculate the n^n value
 5
@@ -32,6 +36,10 @@ int calculate (int t){
 ```
 ##Exercise 2  
 ###Write a C++ program that sorts strings in alphabetical order (from a to z).
+
+Here I used algorithm and string library, so it was easier to take a string and sort it from a-z. The reason I get the "S" before "aekt" is that the "S" is typed in as a uppercase.
+
+What I got in cmder
 ```
 Please enter a sentence:  
 Stake                     
@@ -61,6 +69,9 @@ int main()
 ##Exercise  3  
 ###Write a C++ program using an array that can hold twenty integers which should be input from the user. Display those input values on the screen, and then prompt 
 the user for an element to be searched in this array. Finally, count the number of times the input element is foundin the array.
+
+
+What i got in the cmder:
 ```
 Type in how many numbers you want to store:
 5
@@ -79,24 +90,49 @@ You typed in the values:
 The code:
 ```c++
 #include <iostream>
-#include <algorithm>
-#include <string>
+#include <vector>
 
 using namespace std;
 
 int main()
 {
-	string n;
-	cout<<"Please enter a sentence: "<<endl;
+	//vector<int> values;
+
+	int n,r,u=0; 
+	//int input;
+	cout<<"Type in how many numbers you want to store: "<<endl;
 	cin>>n;
-	sort(n.begin(),n.end());
-	cout<<"\nThe sentence is now: "<<n;
+	cout<<"What number do you want to look for?"<<endl;
+	cin>>r;
+	int *P= new int[n];
+	cout<<"You want to store, "<<n<<" numbers.\nNow type in the numbers"<<endl;
+	for (int i = 0; i < n; ++i)
+	{			
+		//cin>>input; 
+		//values.push_back(input);
+		cin>>P[i];
+		if (P[i]==r){
+			u++;
+
+		}
+		
+	}
+	cout<<"You typed in the values:"<<endl;
+	for (int j = 0; j < n; ++j)
+	{
+		cout<<P[j]<<" ";
+	}
+	delete[] P;
+	cout<<"You wanted to look for the number '"<<r<<"' this number is stored "<<u<<" times in the array."<<endl;
 	return 0;
 }
-
 ```
 ##Exercise 4  
 ###Write a C++ program that creates a vector of 15 integer elements. Using an iterator, assign each element a value that is three times of its current value.
+
+Here i created a vector that holds 15 integers by using a for loop to give it values from 1-15. These numbers are used to give new values three times the size of the original value. I also used for loop for displaying the values for the user in cmder.
+
+What i got in cmder:
 ```
 You hav now stored the numbers:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
