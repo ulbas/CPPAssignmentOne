@@ -1,6 +1,9 @@
 ##Exercise 1
 Write a C++ program that calculates n^n by declaring your own function. Note: n is an input from the user.
 ```
+Type in a value n to calculate the n^n value
+5
+The value is: 3125
 ```
 The code:
 ```c++
@@ -30,6 +33,10 @@ int calculate (int t){
 ##Exercise 2
 ###Write a C++ program that sorts strings in alphabetical order (from a to z).
 ```
+Please enter a sentence:  
+Stake                     
+                          
+The sentence is now: Saekt
 
 ```
 The code:
@@ -55,6 +62,19 @@ int main()
 ###Write a C++ program using an array that can hold twenty integers which should be input from the user. Display those input values on the screen, and then prompt 
 the user for an element to be searched in this array. Finally, count the number of times the input element is foundin the array.
 ```
+Type in how many numbers you want to store:
+5
+What number do you want to look for?
+4
+You want to store, 5 numbers.
+Now type in the numbers
+2
+3
+4
+5
+4
+You typed in the values:
+2 3 4 5 4 You wanted to look for the number '4' this number is stored 2 times in the array.
 ```
 The code:
 ```c++
@@ -78,6 +98,10 @@ int main()
 ##Exercise 4
 ###Write a C++ program that creates a vector of 15 integer elements. Using an iterator, assign each element a value that is three times of its current value.
 ```
+You hav now stored the numbers:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+Now the integers is three times its original size, and the value is now:
+3 6 9 12 15 18 21 24 27 30 33 36 39 42 45
 ```
 The code:
 ```c++
@@ -122,6 +146,14 @@ int main()
 ##Exercise 5
 ###Write a C++ program that accepts five integer values from the user using pointers.
 ```
+Please enter your five values:
+6
+8
+3
+4
+1
+Your numbers are:
+6 8 3 4 1
 ```
 The code:
 ```c++
@@ -155,6 +187,19 @@ int main(int argc, char const *argv[])
 ##Exercise 6
 ###Write a C++ program that prints the elements of an array in a reverse order using pointers.
 ```
+Enter the size of the array:
+5                           
+                            
+The size is chosen to be 5. 
+Now type in your integers:  
+8                           
+4                           
+5                           
+2                           
+3                           
+                            
+                            
+3 2 5 4 8                   
 ```
 The code:
 ```c++
@@ -183,9 +228,18 @@ int main()
 
 ```
 ##Exercise 7
-###Write a C++ program that finds the maximum of an integral data set. The program will first ask the user to input the number of data values in the set and 
+###Write a C++ program that finds the maximum of an integral data set.   
+The program will first ask the user to input the number of data values in the set and   
 finally should display a pointer that points to the maximum value of the data set. 
 ```
+Enter number of data values:
+4
+Enter value 1'th: 4
+Enter value 2'th: 9
+Enter value 3'th: 4
+Enter value 4'th: 1
+The highest value is: 9
+The the adress is: 0xf31f28
 ```
 The code:
 ```c++
@@ -224,6 +278,13 @@ int *findMax(int data[],int n){
 ##Exercise 8
 ###Write a C++ class having private variables and two member functions which will return the area of a rectangle and a triangle.
 ```
+Set the Height and Width for the area of the rectangle and the triangle:
+
+Height: 8
+
+Width: 10
+
+The size of the 'Rectangle' is: 80, and the size of the 'Triangle' is: 40
 ```
 The code:
 ```c++
@@ -271,6 +332,17 @@ int main()
 ###Write a C++ program that takes an input of two integers in the main function and pass them to a default constructor of the class. 
 Finally, display the result of an addition, subtraction, multiplication and division of the input integers.
 ```
+Type in two integers so the code can find the addition, substraction, multiplication and the division of the two numbers.
+
+Type in the first number: 8
+and now the second: 6
+
+Here are the values of 8 and 6
+8 + 6 = 14
+8 - 6 = 2
+8 x 6 = 48
+8 / 6 = 1.33333
+
 ```
 The code:
 ```c++
@@ -325,12 +397,14 @@ int main()
 
 ```
 ##Exercise 10
-###Write a C++ class named point that has three coordinates x,y, and z, where the coordinates are private. Create a function which is external
-to the class that computes the dot product between the coordinates.(Note: How do we access private members? Refer to the lecture slides on classes
-. Hint: friend functions)Note: In mathematics, the dot product or scalar product is an algebraic operation that takes two equal-length sequences of numbers (usually coordinate vectors) and returns a 
-single number.
+###Write a C++ class named point that has three coordinates x,y, and z, where the coordinates are private.  
+Create a function which is external to the class that computes the dot product between the coordinates.  
+(Note: How do we access private members? Refer to the lecture slides on classes. Hint: friend functions)  
+Note: In mathematics, the dot product or scalar product is an algebraic operation that takes two equal-length  
+sequences of numbers (usually coordinate vectors) and returns a single number.
 /*Example: The dot product of vectors [1, 3, -5] and [4, -2, -1] is: (1)(4) + (3)(-2) + (-5)(-1) =3*/
 ```
+The dotProduct is :3
 ```
 The code:
 ```c++
