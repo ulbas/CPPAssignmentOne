@@ -1,5 +1,5 @@
 ##Exercise 1
-Write a C++ program that calculates n^n by declaring your own function. Note: n is an input from the user.
+###Write a C++ program that calculates n^n by declaring your own function. Note: n is an input from the user.
 ```
 Type in a value n to calculate the n^n value
 5
