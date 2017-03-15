@@ -329,8 +329,7 @@ int main()
 
 ```
 ##Exercise 9  
-###Write a C++ program that takes an input of two integers in the main function and pass them to a default constructor of the class. 
-Finally, display the result of an addition, subtraction, multiplication and division of the input integers.
+###Write a C++ program that takes an input of two integers in the main function and pass them to a default constructor of the class. Finally, display the result of an addition, subtraction, multiplication and division of the input integers.
 ```
 Type in two integers so the code can find the addition, substraction, multiplication and the division of the two numbers.
 
