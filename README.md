@@ -401,7 +401,7 @@ Create a function which is external to the class that computes the dot product b
 (Note: How do we access private members? Refer to the lecture slides on classes. Hint: friend functions)  
 Note: In mathematics, the dot product or scalar product is an algebraic operation that takes two equal-length  
 sequences of numbers (usually coordinate vectors) and returns a single number.
-/*Example: The dot product of vectors [1, 3, -5] and [4, -2, -1] is: (1)(4) + (3)(-2) + (-5)(-1) =3*/
+\*Example: The dot product of vectors [1, 3, -5] and [4, -2, -1] is: (1)(4) + (3)(-2) + (-5)(-1) =3*\
 ```
 The dotProduct is :3
 ```
