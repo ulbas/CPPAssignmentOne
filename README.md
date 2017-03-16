@@ -67,9 +67,10 @@ int main()
 
 ```
 ##Exercise  3  
-###Write a C++ program using an array that can hold twenty integers which should be input from the user. Display those input values on the screen, and then prompt 
-the user for an element to be searched in this array. Finally, count the number of times the input element is foundin the array.
+###Write a C++ program using an array that can hold twenty integers which should be input from the user. Display those input values on the screen, and then prompt the user for an element to be searched in this array.  
+Finally, count the number of times the input element is foundin the array.
 
+Here I'm giving the user the choice to pick the size of the array and what number to look for. I'm using two for loop, one to write the values to the array and one to print them in console, I also use an if statement in the first for loop to count every time the value we look for is typed.
 
 What i got in the cmder:
 ```
@@ -181,6 +182,10 @@ int main()
 ```
 ##Exercise 5  
 ###Write a C++ program that accepts five integer values from the user using pointers.
+
+I set up an array with the room for 5 integers, the I set up the possibility to write to this array with an pointer form a for loop, then I use those same pointers to print the values that I have stored in the array.
+
+What i get in cmder:
 ```
 Please enter your five values:
 6
@@ -222,6 +227,10 @@ int main(int argc, char const *argv[])
 ```
 ##Exercise 6  
 ###Write a C++ program that prints the elements of an array in a reverse order using pointers.
+
+In this code I gave the user possibility to choose the size of the array, and to type in the values to store. Then I use an new for loop to read the values in revers order and displaying them in console.
+
+What I get in cmder:
 ```
 Enter the size of the array:
 5                           
@@ -267,6 +276,10 @@ int main()
 ###Write a C++ program that finds the maximum of an integral data set.   
 The program will first ask the user to input the number of data values in the set and   
 finally should display a pointer that points to the maximum value of the data set. 
+
+I used a function to find the highest value typed in by the user. This value I displayed again in console, and I used this values to let med print its adress using a pointer.
+
+What I get in cmder:
 ```
 Enter number of data values:
 4
@@ -290,7 +303,8 @@ int main(){
 	cout<<"Enter number of data values:"<<endl;    
 	cin>>n;    
 	int *t =new int[n];        
-	for(i=0;i<n;i++)     {      
+	for(i=0;i<n;i++)    
+	{      
 		cout<<"Enter value "<<i+1<<"'th: ";      
 		cin>>t[i];            
 	}          
@@ -313,6 +327,10 @@ int *findMax(int data[],int n){
 ```
 ##Exercise 8  
 ###Write a C++ class having private variables and two member functions which will return the area of a rectangle and a triangle.
+
+Setting up a class Area where I store both the height and the width of my triangle and rectangle. I give my class two member functions where I do the math to find the size of the area and returning the value to use. In main I let the user type in the width and height of the triangle and the rectangle.
+
+What i get in cmder:
 ```
 Set the Height and Width for the area of the rectangle and the triangle:
 
@@ -366,6 +384,10 @@ int main()
 ```
 ##Exercise 9  
 ###Write a C++ program that takes an input of two integers in the main function and pass them to a default constructor of the class. Finally, display the result of an addition, subtraction, multiplication and division of the input integers.
+
+Setting up a class to store the values the user types in, here I also sett up 4 funtions in public where I take this two values and do the tasks the exercise asks for(addition, substraction, multiplication and division). I also give the class Kalk a constructor so I can impliment more objects, without making any syntax errors. 
+
+What I get in cmder:
 ```
 Type in two integers so the code can find the addition, substraction, multiplication and the division of the two numbers.
 
@@ -438,6 +460,10 @@ Create a function which is external to the class that computes the dot product b
 Note: In mathematics, the dot product or scalar product is an algebraic operation that takes two equal-length  
 sequences of numbers (usually coordinate vectors) and returns a single number.
 \*Example: The dot product of vectors [1, 3, -5] and [4, -2, -1] is: (1)(4) + (3)(-2) + (-5)(-1) =3*\
+
+Creater a class Point, here i store the values of the x,y and z. In the public area i include the friend member function *int dot* where I have my two vectors. In the int dot I multiply the x,y and z from the two vectors so I end up with just one `x,y,z` her called `a,b,c` so I can find the product easier. In main I give the object dot the new name dotProduct so I can use it in my cout so I dont have to type in the value all the time.
+
+What I get in cmder:
 ```
 The dotProduct is :3
 ```
