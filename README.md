@@ -454,11 +454,7 @@ int main()
 
 ```
 ##Exercise 10  
-###Write a C++ class named point that has three coordinates x,y, and z, where the coordinates are private.  
-Create a function which is external to the class that computes the dot product between the coordinates.  
-(Note: How do we access private members? Refer to the lecture slides on classes. Hint: friend functions)  
-Note: In mathematics, the dot product or scalar product is an algebraic operation that takes two equal-length  
-sequences of numbers (usually coordinate vectors) and returns a single number.
+###Write a C++ class named point that has three coordinates x,y, and z, where the coordinates are private.  Create a function which is external to the class that computes the dot product between the coordinates.  (Note: How do we access private members? Refer to the lecture slides on classes. Hint: friend functions)  Note: In mathematics, the dot product or scalar product is an algebraic operation that takes two equal-length  sequences of numbers (usually coordinate vectors) and returns a single number.
 \*Example: The dot product of vectors [1, 3, -5] and [4, -2, -1] is: (1)(4) + (3)(-2) + (-5)(-1) =3*\
 
 Creater a class Point, here i store the values of the x,y and z. In the public area i include the friend member function *int dot* where I have my two vectors. In the int dot I multiply the x,y and z from the two vectors so I end up with just one `x,y,z` her called `a,b,c` so I can find the product easier. In main I give the object dot the new name dotProduct so I can use it in my cout so I dont have to type in the value all the time.
