@@ -1,505 +1,476 @@
-##Exercise 1  
-###Write a C++ program that calculates n^n by declaring your own function. Note: n is an input from the user.
+##Problem 1
+###Write a class to contain the following information about towns: the name (a sequence of characters); the population (an integer); and a Boolean value (i.e. true or false) which 
+indicates whether the town has an airport or not. Make the three data members private. Include a constructor that initialises the data members.
 
-This exercise was easy to solve, I just let the user type in value n, value n was then sent to function calculate where i used a for loop to find `n^n`.
-
-Input and Output i cmder:
-```
-Type in a value n to calculate the n^n value
-5
-The value is: 3125
-```
 The code:
 ```c++
 #include <iostream>
-
-using namespace std;
-int calculate(int t);
-int main()
-{
-	int n,number;
-	cout<<"Type in a value n to calculate the n^n value"<<endl;
-	cin>>n;
-	number=calculate(n);
-	cout<<"The value is: "<<number<<endl;
-	return 0;
-}
-int calculate (int t){
-	int P=t;
-	for (int i = 1; i < t; ++i)
-	{
-		P*=t;
-	}
-	return P;
-}
-
-```
-##Exercise 2  
-###Write a C++ program that sorts strings in alphabetical order (from a to z).
-
-Here I used algorithm and string library, so it was easier to take a string and sort it from a-z. The reason I get the "S" before "aekt" is that the "S" is typed in as a uppercase.
-
-What I got in cmder
-```
-Please enter a sentence:  
-Stake                     
-                          
-The sentence is now: Saekt
-
-```
-The code:
-```c++
-#include <iostream>
-#include <algorithm>
 #include <string>
 
 using namespace std;
 
-int main()
+class Town
 {
-	string n;
-	cout<<"Please enter a sentence: "<<endl;
-	cin>>n;
-	sort(n.begin(),n.end());
-	cout<<"\nThe sentence is now: "<<n;
-	return 0;
-}
-
-```
-##Exercise  3  
-###Write a C++ program using an array that can hold twenty integers which should be input from the user. Display those input values on the screen, and then prompt the user for an element to be searched in this array.  
-Finally, count the number of times the input element is foundin the array.
-
-Here I'm giving the user the choice to pick the size of the array and what number to look for. I'm using two for loop, one to write the values to the array and one to print them in console, I also use an if statement in the first for loop to count every time the value we look for is typed.
-
-What i got in the cmder:
-```
-Type in how many numbers you want to store:
-5
-What number do you want to look for?
-4
-You want to store, 5 numbers.
-Now type in the numbers
-2
-3
-4
-5
-4
-You typed in the values:
-2 3 4 5 4 You wanted to look for the number '4' this number is stored 2 times in the array.
-```
-The code:
-```c++
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-int main()
-{
-	//vector<int> values;
-
-	int n,r,u=0; 
-	//int input;
-	cout<<"Type in how many numbers you want to store: "<<endl;
-	cin>>n;
-	cout<<"What number do you want to look for?"<<endl;
-	cin>>r;
-	int *P= new int[n];
-	cout<<"You want to store, "<<n<<" numbers.\nNow type in the numbers"<<endl;
-	for (int i = 0; i < n; ++i)
-	{			
-		//cin>>input; 
-		//values.push_back(input);
-		cin>>P[i];
-		if (P[i]==r){
-			u++;
-
-		}
-		
-	}
-	cout<<"You typed in the values:"<<endl;
-	for (int j = 0; j < n; ++j)
-	{
-		cout<<P[j]<<" ";
-	}
-	delete[] P;
-	cout<<"You wanted to look for the number '"<<r<<"' this number is stored "<<u<<" times in the array."<<endl;
-	return 0;
-}
-```
-##Exercise 4  
-###Write a C++ program that creates a vector of 15 integer elements. Using an iterator, assign each element a value that is three times of its current value.
-
-Here i created a vector that holds 15 integers by using a for loop to give it values from 1-15. These numbers are used to give new values three times the size of the original value. I also used for loop for displaying the values for the user in cmder.
-
-What i got in cmder:
-```
-You hav now stored the numbers:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
-Now the integers is three times its original size, and the value is now:
-3 6 9 12 15 18 21 24 27 30 33 36 39 42 45
-```
-The code:
-```c++
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-int main()
-{
-	vector<int> elements;
-
-	for (int i = 1; i < 16; ++i)
-	{
-		
-		elements.push_back(i);
-
-	}
-	cout<<"You hav now stored the numbers: "<<endl;
-	for (int i = 0; i < 15; ++i)
-	{   
-
-		cout<<elements[i]<<" ";
-	}
-
-
-	for (int i = 0; i < 15; ++i)
-	{
-
-		elements[i]=elements[i]*3;
-	}
-	cout<<"\nNow the integers is three times its original size, and the value is now: "<<endl;
-	for (int i = 0; i < 15; ++i)
-	{
-		cout<<elements[i]<<" ";
-	}
-
-	return 0;
-}
-
-```
-##Exercise 5  
-###Write a C++ program that accepts five integer values from the user using pointers.
-
-I set up an array with the room for 5 integers, the I set up the possibility to write to this array with an pointer form a for loop, then I use those same pointers to print the values that I have stored in the array.
-
-What i get in cmder:
-```
-Please enter your five values:
-6
-8
-3
-4
-1
-Your numbers are:
-6 8 3 4 1
-```
-The code:
-```c++
-#include <iostream>
-
-using namespace std;
-
-int main(int argc, char const *argv[])
-{
-	int arr[5];
-	int *p=arr;
-
-	cout<<"Please enter your five values: "<<endl;
-	
-	for (int i = 0; i < 5; ++i)
-	{
-		cin>>*(p+i);
-	}
-	
-	
-	cout<<"Your numbers are: "<<endl;
-	
-	for (int i = 0; i < 5; ++i)
-	{
-		cout<<*(p+i)<<" ";
-	}
-	return 0;
-}
-
-```
-##Exercise 6  
-###Write a C++ program that prints the elements of an array in a reverse order using pointers.
-
-In this code I gave the user possibility to choose the size of the array, and to type in the values to store. Then I use an new for loop to read the values in revers order and displaying them in console.
-
-What I get in cmder:
-```
-Enter the size of the array:
-5                           
-                            
-The size is chosen to be 5. 
-Now type in your integers:  
-8                           
-4                           
-5                           
-2                           
-3                           
-                            
-                            
-3 2 5 4 8                   
-```
-The code:
-```c++
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-	int n;
-	cout<<"Enter the size of the array: "<<endl;
-	cin>>n;
-	int *p=new int[n];
-	cout<<"\nThe size is chosen to be "<<n<<".\nNow type in your integers: "<<endl;
-	for (int i = 0; i < n; ++i)
-	{
-		cin>>p[i];
-	}
-	cout<<"\n"<<endl;
-	for (int j=n-1; j >= 0 ; j--)
-	{
-		cout<<p[j]<<" ";
-	}
-	return 0;
-}
-
-```
-##Exercise 7  
-###Write a C++ program that finds the maximum of an integral data set.   
-The program will first ask the user to input the number of data values in the set and   
-finally should display a pointer that points to the maximum value of the data set. 
-
-I used a function to find the highest value typed in by the user. This value I displayed again in console, and I used this values to let med print its adress using a pointer.
-
-What I get in cmder:
-```
-Enter number of data values:
-4
-Enter value 1'th: 4
-Enter value 2'th: 9
-Enter value 3'th: 4
-Enter value 4'th: 1
-The highest value is: 9
-The the adress is: 0xf31f28
-```
-The code:
-```c++
-#include <iostream> 
-
-using namespace std;
-
-int *findMax(int arr[],int n);
-
-int main(){    
-	int n,i,*p;    
-	cout<<"Enter number of data values:"<<endl;    
-	cin>>n;    
-	int *t =new int[n];        
-	for(i=0;i<n;i++)    
-	{      
-		cout<<"Enter value "<<i+1<<"'th: ";      
-		cin>>t[i];            
-	}          
-	p=findMax(t,n);    
-
-	cout<<"The highest value is: "<<*p<<"\nThe the adress is: "<<p;    
-	    
-	return 0;
-}  
-
-int *findMax(int data[],int n){    
-	int *max=data;    
-	int i;    
-	for(i=1;i<n;i++){           
-		if(*max<*(max+i)) *max=*(max+i);                             
-	}    
-	return max;
-}
-
-```
-##Exercise 8  
-###Write a C++ class having private variables and two member functions which will return the area of a rectangle and a triangle.
-
-Setting up a class Area where I store both the height and the width of my triangle and rectangle. I give my class two member functions where I do the math to find the size of the area and returning the value to use. In main I let the user type in the width and height of the triangle and the rectangle.
-
-What i get in cmder:
-```
-Set the Height and Width for the area of the rectangle and the triangle:
-
-Height: 8
-
-Width: 10
-
-The size of the 'Rectangle' is: 80, and the size of the 'Triangle' is: 40
-```
-The code:
-```c++
-#include <iostream>
-
-using namespace std;
-
-class Area{
-	float height,width;
+private:
+	int popul;
+	bool airport;
+	string name;
 
 public:
-	void set_values(int,int);
-	float areatri(){
-		float area1=(height*width)/2;
-		return area1;
-	}
-	float arearec(){
-		return height*width;
-	}	
-
+	Town(string n, int p, bool a);
+	
 };
-void Area::set_values(int x, int y){
-	width = x;
-	height = y;
+Town::Town(string n,int p, bool a){
+
+	name= n;
+	popul=p;
+	airport=a;
+
+}
+
+int main()
+{
+	Town townone("Oslo",542416,true);
+	return 0;
+}
+```
+##Problem 2
+###Now add three new member functions to the towns class that assign values to the three data members. Also add a member function to print out all the information about a town. The 
+member functions should all be publicly accessible. Write a main()function which declares three town objects and assigns the following values to them:
+
+What i get in console:
+```
+Oslo    1019000 TRUE
+Bergen  275100  TRUE
+Lillestrøm      14000   FALSE
+```
+The code:
+```c++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Town
+{
+private:
+	int popul;
+	bool airport;
+	string name;
+
+public:
+	Town(string n, int p, bool a);
+	void setName(string n);
+	void setPop(int p);
+	void setAir(bool a);
+	void displaytown();
+	
+};
+Town::Town(string n,int p,bool a){
+
+	name= n;
+	popul=p;
+	airport=a;
+	
+}
+void Town::setName(string n)
+{
+	name=n;
+	
+}
+void Town::setPop(int p){
+	
+	popul=p;
+}
+void Town::setAir(bool a){
+	airport=a;
+}
+void Town::displaytown()
+{
+
+	cout<<name<<"\t"<<popul<<"\t";
+	if (airport==1)
+		cout<<"TRUE"<<endl;
+
+	else if(airport==0)
+		cout<<"FALSE"<<endl;
+	
 }
 
 int main()
 {	
-	float a,b;
-	cout<<"Set the Height and Width for the area of the rectangle and the triangle: "<<endl;
-	cout<<"\nHeight: ";
-	cin>>a;
-	cout<<"\nWidth: ";
-	
-	cin>>b;
-	Area figure;
-	figure.set_values(a,b);	
+	Town tone("",0,0);
+	Town ttwo("",0,0);
+	Town tthree("",0,0);
+	tone.setName("Oslo");
+	ttwo.setName("Bergen");
+	tthree.setName("Lillestr\233m");
+	tone.setPop(1019000);
+	ttwo.setPop(275100);
+	tthree.setPop(14000);
+	tone.setAir(1);
+	ttwo.setAir(1);
+	tthree.setAir(0);
+	tone.displaytown();
+	ttwo.displaytown();
+	tthree.displaytown();
 
-	cout<<"\nThe size of the 'Rectangle' is: "<<figure.arearec()<<", and the size of the 'Triangle' is: "<<figure.areatri()<<endl;
 	return 0;
 }
-
 ```
-##Exercise 9  
-###Write a C++ program that takes an input of two integers in the main function and pass them to a default constructor of the class. Finally, display the result of an addition, subtraction, multiplication and division of the input integers.
-
-Setting up a class to store the values the user types in, here I also sett up 4 funtions in public where I take this two values and do the tasks the exercise asks for(addition, substraction, multiplication and division). I also give the class Kalk a constructor so I can impliment more objects, without making any syntax errors. 
-
-What I get in cmder:
+##Problem 3
+###Write a class called Point. The class should have two private float data members x and y. Write two constructors: one default constructor that initialises the data members to 0, and one that takes two arguments and uses them to initialise the two data members. Also write the following member functions:void SetXY (float, float) assigns the two arguments to the two data members float GetX () returns the value of the x data member float GetY ()returns the value of the 
+y data member void Move (float, float) moves the point by the specified amount void Display () displays the values of the arguments Write a main function that allows  the  user  to  enter  the x and y coordinates of two Point objects and then calculates  and  prints  the  equation  of  the  straight  line  that  joins  the  two 
+points. A straight line is defined by the equation y = mx + c, so the values of m and c can be calculated as follows:
+m = (y2–y1) / (x2–x1)
+c = y1-mx1
 ```
-Type in two integers so the code can find the addition, substraction, multiplication and the division of the two numbers.
-
-Type in the first number: 8
-and now the second: 6
-
-Here are the values of 8 and 6
-8 + 6 = 14
-8 - 6 = 2
-8 x 6 = 48
-8 / 6 = 1.33333
-
 ```
-The code:
 ```c++
 #include <iostream>
 
 using namespace std;
-class Kalk{
-	int one,two;
+
+class Point
+{
+private:
+	float x,y;
 public:
-	Kalk(int x,int y);
-	int addition(){
-		return one+two;
-	}
-	int substr(){
-		return one-two;
-	}
-	int multipli(){
-		return one*two;
-	}
-	float divis(){
-		
-		return 1.0*one/two;
-	}
-
-
+	Point();
+	Point(float a,float b);
+	void SetXY(float a,float b);
+	float GetX();
+	float GetY();
+	void Move(float a,float b);
+	void Display();
+	
 };
-Kalk::Kalk(int x,int y){
-	one = x;
-	two = y;
-	cout<<"\nHere are the values of "<<one<<" and "<<two<<endl;
+Point::Point(void){
+	x=0;
+	y=0;
+}
+Point::Point(float a, float b){
+	x=a;
+	y=b;
+}
+void Point::SetXY(float a,float b){
+	x=a;
+	y=b;
+}
+float Point::GetX(){
+	return x;
+}
+float Point::GetY(){
+	return y;
+}
+void Point::Move(float a, float b){
+	x = x+a;
+	y = y+b;
+}
+void Point::Display(){
+
+	cout<<"X = "<<x<<" and Y = "<<y<<endl;
 }
 int main()
 {
-	int a,b;
-	cout<<"Type in two integers so the code can find the addition, substraction, multiplication and the division of the two numbers.\n\nType in the first number: ";
-	cin>>a;
-	cout<<"and now the second: ";
-	cin>>b;
-
-	Kalk first(a,b);
+	float e,f;
+	float m,c;
+	cout<<"For the first point."<<endl;
+	cout<<"Enter the x-value."<<endl;
+	cin>>e;
+	cout<<"Enter the y-value."<<endl;
+	cin>>f;
+	Point point1(e,f);
+	cout<<"For the second point."<<endl;
+	cout<<"Enter the x-value."<<endl;
+	cin>>e;
+	cout<<"Enter the y-value."<<endl;
+	cin>>f;
+	Point point2(e,f);
 	
-	
-	cout<<a<<" + "<<b<<" = "<<first.addition()<<endl;
-	cout<<a<<" - "<<b<<" = "<<first.substr()<<endl;
-	cout<<a<<" x "<<b<<" = "<<first.multipli()<<endl;
-	if (first.divis()<=0)
-		cout<<a<<" / "<<b<<" = "<<"Not possible!"<<endl;
-	else	
-		cout<<a<<" / "<<b<<" = "<<first.divis()<<endl;
+	m = (point2.GetY()-point1.GetY())/(point2.GetX()-point1.GetX());
+	c = m*point1.GetX();
+	cout<<"y = "<<m<<"x + "<<c<<endl;
 	return 0;
 }
-
 ```
-##Exercise 10  
-###Write a C++ class named point that has three coordinates x,y, and z, where the coordinates are private.  Create a function which is external to the class that computes the dot product between the coordinates.  (Note: How do we access private members? Refer to the lecture slides on classes. Hint: friend functions)  Note: In mathematics, the dot product or scalar product is an algebraic operation that takes two equal-length  sequences of numbers (usually coordinate vectors) and returns a single number.
-\*Example: The dot product of vectors [1, 3, -5] and [4, -2, -1] is: (1)(4) + (3)(-2) + (-5)(-1) =3*\
+##Problem 4
+###Now write a new class called Triangle. A triangle consists of 3 points. The Triangle class should have one default constructor and another constructor that initialises the three points  
+of the triangle. It should also have a member function that calculates the area of the triangle according to the formula where a, b and c are the lengths of the three sides, and s is half of the sum of the three sides.  
+Write a main function that inputs three points from the user, and prints out the area of the triangle they form.
 
-Creater a class Point, here i store the values of the x,y and z. In the public area i include the friend member function *int dot* where I have my two vectors. In the int dot I multiply the x,y and z from the two vectors so I end up with just one `x,y,z` her called `a,b,c` so I can find the product easier. In main I give the object dot the new name dotProduct so I can use it in my cout so I dont have to type in the value all the time.
-
-What I get in cmder:
+What i get in console:
 ```
-The dotProduct is :3
+For the first point. 
+Enter the x-value.   
+5                    
+Enter the y-value.   
+5                    
+For the second point.
+Enter the x-value.   
+10                   
+Enter the y-value.   
+8                    
+y = 0.6x + 3         
+                     
 ```
 The code:
 ```c++
 #include <iostream>
+
 using namespace std;
-
-class Point {
-
+class Triangle
+{
 private:
-int p_x,p_y,p_z;
-
+	float x,y,z;
 public:
-	Point(int x,int y, int z) : p_x(x),p_y(y),p_z(z){
+	Triangle();
+	Triangle(float a,float b, float c);
+	
+	
+};
+Triangle::Triangle(void){
+
+}
+Triangle::Triangle(float a, float b, float c){
+	a=Point.setX;
+	b=Point.setY;
+	c=Point.setZ;
+}
+float Triangle::setSum(){
+ float s=
+}
+class Point
+{
+private:
+	float x,y;
+public:
+	Point();
+	Point(float t,float r);
+	setX(float t,float r);
+	setY(float t,float r);
+	setZ(float t,float r);
+};
+Point::Point(float t,float r){
+	x=t;
+	y=r;
+}
+float Point::setX(float t, float r){
+	float g=(t,r);
+	return g;
+}
+float Point::setY(float t, float r){
+	float h=(t,r);
+	return h;
+}
+float Point::setZ(float t, float r){
+	float j=(t,r);
+	return j;
+}
+
+int main()
+{
+	Point.setX(1,2);
+	Point.setY(4,6);
+	Point.setZ(3,1);
+
+	return 0;
+}
+```
+##Problem 5
+###A video shop needs to store information about the films it stocks. It has two types of film: 
+video-cassettes and DVDs. Create a Film class that has two public data members title (a char*) and length (an int). Next create two classes called Cassette and   
+DVD that are both derived from Film. The Cassette class should contain an extra public data member called condition (an enum type that can take the values perfect,  
+good, average or poor). The DVD class should contain an extra public data member called region (an int). Both Cassette and DVD should have an extra public member function called  
+Print that displays all data members. Write a short main function that creates objects to store information about two films and then displays the information to the screen:  
+“Titanic” (a DVD, 180 minutes long, region 1) and “Kezkaza Welafen” (a video cassette, 100 minutes long, good condition).
+
+What i get in console:
+```
+Kezkaza Welafen is a video cassette, 100 minutes long, the condition is Good  
+                                                                              
+Titanic is a DVD, 180 minutes long, region 1                                  
+```
+The code:
+```c++
+#include <iostream>
+
+using namespace std;
+class Film
+{
+public:
+	
+	char* title;
+	int length;
+	
+	
+};
+class DVD:public Film
+{
+public:
+	int region;
+	
+	void print(void);
+	
+};
+void DVD::print(void){
+	cout<<"\n"<<this->title;
+	cout<<" is a DVD, "<<this->length<<" minutes long, region "<<this->region<<endl;
+}
+class Cassette:public Film
+{
+public:
+	enum condition {Perfect,Good,Avarage,Poor};	
+	
+	void print(void);
+	condition cond;	
+	
+};
+void Cassette::print(void){
+	cout<<this->title;
+	cout<<" is a video cassette, "<<this->length<<" minutes long, the condition is ";
+	switch (cond){
+		case 0: cout<<"Perfect"<<endl; break;
+		case 1: cout<<"Good"<<endl; break;
+		case 2: cout<<"Avarage"<<endl; break;
+		case 3: cout<<"Poor"<<endl; break;
 	}
- 	friend int dot(Point p1, Point p2);
+}
+
+int main(int argc, char const *argv[])
+{	
+	char name1[100]= "Kezkaza Welafen";
+	char name2[100]= "Titanic";
+	Cassette film1;
+	DVD film2;
+	
+	film1.title=name1;
+	film1.length =100;
+	film1.cond = film1.Good;
+	//film1;
+	
+	film2.title=name2;
+	film2.length =180;
+	film2.region=1;
+	film1.print();
+	film2.print();
+	return 0;
+}
+```
+##Problem 6
+###Create the ZooAnimal inheritance hierarchy shown below. Every animal in the hierarchy should have a char* data member called name. Every Bear,  
+Koala or Panda should have an int data member called gestationPeriod. Every Fish or Shark should have a float data member called speed.  
+Every  animal  in  the  hierarchy  should  include  a  function  called feedingTime() that prints out details of when an animal should be fed. The actual feeding time will be different  
+for each animal but every animal should have a feeding time. Every type of bear should include a function called makenoise() that prints out the noise made by the animal. The  
+actual noise made will be different for each type of bear. Fish do not make any noise.
+```
+```
+```c++
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+class ZooAnimal
+{
+public:
+	char* name;
+	name=n;
+	void feedingTime(int a);	
+};
+void ZooAnimal::feedingTime(int a){
+	cout<<"The animal should be fed at: "<<a<<". O'clock."<<endl;
+}
+
+class Bear:public ZooAnimal
+{
+public:	
+	int gestationPeriod;
+	void makenoise(char* n){
+cout<<"The bear make the following noise: "<<n<<"\n"<<endl;
+}
 };
 
-int dot(Point p1, Point p2){
-    int a,b,c,sum;
-    a=p1.p_x*p2.p_x;
-    b=p1.p_y*p2.p_y;
-    c=p1.p_z*p2.p_z;
-    sum=a+b+c;
-    return sum;
-}
+class Fish:public ZooAnimal
+{
+public:
+	float speed;	
+};
+class Shark:public Fish
+{
+public:
+};
+class Koala:public Bear
+{
+public:
+	char noise[50]="wakkaaaah";
+	char* n=noise;
+};
+class Panda:public Bear
+{
+public:	
+	char noise[50]="raaaawrrr";	
+	char* n=noise;
+};
 
-
-int main() {
+int main()
+{
+	char name[50];"Pamba";
+	Panda bear1;
+	bear1.n =name;
+	bear1.gestationPeriod =9;
+	cout<<"This bear is named: "<<bear1.n<<"."<<endl;
+	bear1.makenoise(bear1.n);
+	cout<<bear1.n<<"\'s gestation period is: "<<bear1.gestationPeriod<<" months."<<endl;
+	bear1.feedingTime(5);
 	
-    Point p1(1,3,-5);
-    Point p2(4,-2,-1);
-
-    int dotProduct = dot(p1,p2);
- 	cout<<"The dotProduct is :"<<dotProduct<<endl;
-    return 0;
+	return 0;
 }
+```
+##Problem7
+###Write a C++ program to create two files named abc.txt which contains the text I love C++  Programming and def.txt which contains the text I love Java Programming.  
+Now, copy the contents of these two files to a new file named xyz.txt. Finally, display the appropriate message on successful completion of the task, for exmaple:  
+“the contents of file abc.txt and def.txt are successfully copied to xyz.txt”.
 
+What i get in console:
+```
+The contents of file abc.txt and def.txt are successfully copied to xyz.txt
+```
+The code:
+```c++
+#include <iostream>
+#include <fstream>
 
+using namespace std;
 
+int main()
+{
+	char ch;
+	ofstream file1;
+	ifstream file2;
+	ofstream file3;
+	file3.open("xyz.txt");
 
+	file1.open("abc.txt");
+	file1 << "I love C++ Programming"<<endl;
+	file1.close();
+	file1.open("def.txt");
+	file1 << "I love Java Programming"<<endl;
+	file1.close();
+
+	file2.open("abc.txt");
+	while(!file2.eof())
+	{
+		file2.get(ch);
+		file3<<ch;
+	}
+	file2.close();
+	file2.open("def.txt");
+	while(!file2.eof())
+	{
+		file2.get(ch);
+		file3<<ch;
+	}
+	file3.close();
+	cout<<"The contents of file abc.txt and def.txt are successfully copied to xyz.txt"<<endl;
+	return 0;
+}
 ```
