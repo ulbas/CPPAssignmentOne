@@ -1,5 +1,5 @@
-##Problem 1  
-###Write a class to contain the following information about towns: the name (a sequence of characters); the population (an integer); and a Boolean value (i.e. true or false) which indicates whether the town has an airport or not. Make the three data members private. Include a constructor that initialises the data members.
+## Problem 1  
+### Write a class to contain the following information about towns: the name (a sequence of characters); the population (an integer); and a Boolean value (i.e. true or false) which indicates whether the town has an airport or not. Make the three data members private. Include a constructor that initialises the data members.
 
 Here I made a class Town were I included 3 private members, to store the values from townone object.
 
@@ -35,8 +35,8 @@ int main()
 	return 0;
 }
 ```
-##Problem 2  
-###Now add three new member functions to the towns class that assign values to the three data members. Also add a member function to print out all the information about a town. The member functions should all be publicly accessible. Write a main()function which declares three town objects and assigns the following values to them:
+## Problem 2  
+### Now add three new member functions to the towns class that assign values to the three data members. Also add a member function to print out all the information about a town. The member functions should all be publicly accessible. Write a main()function which declares three town objects and assigns the following values to them:
 
 I wrote a class Town, a constructor to get the values from main to store in the class Town. Then I wrote functions for population,name ,airport and i print function displayTown.
 
