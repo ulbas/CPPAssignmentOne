@@ -120,8 +120,8 @@ int main()
 	return 0;
 }
 ```
-##Problem 3  
-###Write a class called Point. The class should have two private float data members x and y. Write two constructors: one default constructor that initialises the data members to 0, and one that takes two arguments and uses them to initialise the two data members. Also write the following member functions:void SetXY (float, float) assigns the two arguments to the two data members float GetX () returns the value of the x data member float GetY ()returns the value of the y data member void Move (float, float) moves the point by the specified amount void Display () displays the values of the arguments Write a main function that allows  the  user  to  enter  the x and y coordinates of two Point objects and then calculates  and  prints  the  equation  of  the  straight  line  that  joins  the  two points. A straight line is defined by the equation y = mx + c, so the values of m and c can be calculated as follows:
+## Problem 3  
+### Write a class called Point. The class should have two private float data members x and y. Write two constructors: one default constructor that initialises the data members to 0, and one that takes two arguments and uses them to initialise the two data members. Also write the following member functions:void SetXY (float, float) assigns the two arguments to the two data members float GetX () returns the value of the x data member float GetY ()returns the value of the y data member void Move (float, float) moves the point by the specified amount void Display () displays the values of the arguments Write a main function that allows  the  user  to  enter  the x and y coordinates of two Point objects and then calculates  and  prints  the  equation  of  the  straight  line  that  joins  the  two points. A straight line is defined by the equation y = mx + c, so the values of m and c can be calculated as follows:  
 m = (y2–y1) / (x2–x1) c = y1-mx1
 
 Setting up class Point to store the values for the points I want to use in the formulas. I also give to class functions to get the x and y values, one function to display, one to set the x and the y and one to move the value x and y. In my main 
@@ -209,8 +209,8 @@ int main()
 	return 0;
 }
 ```
-##Problem 4  
-###Now write a new class called Triangle. A triangle consists of 3 points. The Triangle class should have one default constructor and another constructor that initialises the three points of the triangle. It should also have a member function that calculates the area of the triangle according to the formula where a, b and c are the lengths of the three sides, and s is half of the sum of the three sides. Write a main function that inputs three points from the user, and prints out the area of the triangle they form.
+## Problem 4  
+### Now write a new class called Triangle. A triangle consists of 3 points. The Triangle class should have one default constructor and another constructor that initialises the three points of the triangle. It should also have a member function that calculates the area of the triangle according to the formula where a, b and c are the lengths of the three sides, and s is half of the sum of the three sides. Write a main function that inputs three points from the user, and prints out the area of the triangle they form.
 
 What i get in console:
 ```
@@ -292,10 +292,8 @@ int main()
 	return 0;
 }
 ```
-##Problem 5  
-###A video shop needs to store information about the films it stocks. It has two types of film: video-cassettes and DVDs. Create a Film class that has two public data members title (a char*) and length (an int). Next create two classes called Cassette and   
-DVD that are both derived from Film. The Cassette class should contain an extra public data member called condition (an enum type that can take the values perfect, good, average or poor). The DVD class should contain an extra public data member called region (an int). Both Cassette and DVD should have an extra public member function called Print that displays all data members. Write a short main function that creates objects to store information about two films and then displays the information to the screen:  
-“Titanic” (a DVD, 180 minutes long, region 1) and “Kezkaza Welafen” (a video cassette, 100 minutes long, good condition).
+## Problem 5  
+### A video shop needs to store information about the films it stocks. It has two types of film: video-cassettes and DVDs. Create a Film class that has two public data members title (a char*) and length (an int). Next create two classes called Cassette and DVD that are both derived from Film. The Cassette class should contain an extra public data member called condition (an enum type that can take the values perfect, good, average or poor). The DVD class should contain an extra public data member called region (an int). Both Cassette and DVD should have an extra public member function called Print that displays all data members. Write a short main function that creates objects to store information about two films and then displays the information to the screen:  “Titanic” (a DVD, 180 minutes long, region 1) and “Kezkaza Welafen” (a video cassette, 100 minutes long, good condition).
 
 What i get in console:
 ```
@@ -369,8 +367,8 @@ int main(int argc, char const *argv[])
 	return 0;
 }
 ```
-##Problem 6  
-###Create the ZooAnimal inheritance hierarchy shown below. Every animal in the hierarchy should have a char* data member called name. Every Bear, Koala or Panda should have an int data member called gestationPeriod. Every Fish or Shark should have a float data member called speed. Every  animal  in  the  hierarchy  should  include  a  function  called feedingTime() that prints out details of when an animal should be fed. The actual feeding time will be different for each animal but every animal should have a feeding time. Every type of bear should include a function called makenoise() that prints out the noise made by the animal. The actual noise made will be different for each type of bear. Fish do not make any noise.
+## Problem 6  
+### Create the ZooAnimal inheritance hierarchy shown below. Every animal in the hierarchy should have a char* data member called name. Every Bear, Koala or Panda should have an int data member called gestationPeriod. Every Fish or Shark should have a float data member called speed. Every  animal  in  the  hierarchy  should  include  a  function  called feedingTime() that prints out details of when an animal should be fed. The actual feeding time will be different for each animal but every animal should have a feeding time. Every type of bear should include a function called makenoise() that prints out the noise made by the animal. The actual noise made will be different for each type of bear. Fish do not make any noise.
 
 What I get in console:
 ```
@@ -443,8 +441,8 @@ int main()
 	return 0;
 }
 ```
-##Problem7  
-###Write a C++ program to create two files named abc.txt which contains the text I love C++  Programming and def.txt which contains the text I love Java Programming. Now, copy the contents of these two files to a new file named xyz.txt. Finally, display the appropriate message on successful completion of the task, for exmaple: “the contents of file abc.txt and def.txt are successfully copied to xyz.txt”.
+## Problem7  
+### Write a C++ program to create two files named abc.txt which contains the text I love C++  Programming and def.txt which contains the text I love Java Programming. Now, copy the contents of these two files to a new file named xyz.txt. Finally, display the appropriate message on successful completion of the task, for exmaple: “the contents of file abc.txt and def.txt are successfully copied to xyz.txt”.
 
 What i get in console:
 ```
