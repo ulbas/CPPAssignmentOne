@@ -38,6 +38,8 @@ int main()
 ##Problem 2  
 ###Now add three new member functions to the towns class that assign values to the three data members. Also add a member function to print out all the information about a town. The member functions should all be publicly accessible. Write a main()function which declares three town objects and assigns the following values to them:
 
+I wrote a class Town, a constructor to get the values from main to store in the class Town. Then I wrote functions for population,name ,airport and i print function displayTown.
+
 What i get in console:
 ```
 Oslo    1019000 TRUE
@@ -121,8 +123,24 @@ int main()
 ##Problem 3  
 ###Write a class called Point. The class should have two private float data members x and y. Write two constructors: one default constructor that initialises the data members to 0, and one that takes two arguments and uses them to initialise the two data members. Also write the following member functions:void SetXY (float, float) assigns the two arguments to the two data members float GetX () returns the value of the x data member float GetY ()returns the value of the y data member void Move (float, float) moves the point by the specified amount void Display () displays the values of the arguments Write a main function that allows  the  user  to  enter  the x and y coordinates of two Point objects and then calculates  and  prints  the  equation  of  the  straight  line  that  joins  the  two points. A straight line is defined by the equation y = mx + c, so the values of m and c can be calculated as follows:
 m = (y2–y1) / (x2–x1) c = y1-mx1
+
+Setting up class Point to store the values for the points I want to use in the formulas. I also give to class functions to get the x and y values, one function to display, one to set the x and the y and one to move the value x and y. In my main 
+
+what I get in the console:
 ```
+For the first point.
+Enter the x-value.
+5
+Enter the y-value.
+5
+For the second point.
+Enter the x-value.
+7
+Enter the y-value.
+3
+y = -1x + -5
 ```
+The code:
 ```c++
 #include <iostream>
 
@@ -196,79 +214,81 @@ int main()
 
 What i get in console:
 ```
-For the first point. 
-Enter the x-value.   
-5                    
-Enter the y-value.   
-5                    
-For the second point.
-Enter the x-value.   
-10                   
-Enter the y-value.   
-8                    
-y = 0.6x + 3         
-                     
+The area of the triangle is: 0.5                  
 ```
 The code:
 ```c++
 #include <iostream>
-
+#include <cmath>
 using namespace std;
-class Triangle
-{
-private:
-	float x,y,z;
-public:
-	Triangle();
-	Triangle(float a,float b, float c);
-	
-	
-};
-Triangle::Triangle(void){
 
-}
-Triangle::Triangle(float a, float b, float c){
-	a=Point.setX;
-	b=Point.setY;
-	c=Point.setZ;
-}
-float Triangle::setSum(){
- float s=
-}
 class Point
 {
 private:
 	float x,y;
 public:
-	Point();
 	Point(float t,float r);
-	setX(float t,float r);
-	setY(float t,float r);
-	setZ(float t,float r);
+	void setX(float t);
+	void setY(float r);
+
+	float getX();
+	float getY();
 };
 Point::Point(float t,float r){
 	x=t;
 	y=r;
 }
-float Point::setX(float t, float r){
-	float g=(t,r);
-	return g;
+void Point::setX(float t){
+	x = t;
 }
-float Point::setY(float t, float r){
-	float h=(t,r);
-	return h;
+void Point::setY(float r){
+	y = r;
 }
-float Point::setZ(float t, float r){
-	float j=(t,r);
-	return j;
+float Point::getX(){
+	return x;
 }
+float Point::getY(){
+	return y;
+	}
+class Triangle
+{
+private:
+	Point a;
+	Point b;
+	Point c;
+public:
+	Triangle(Point a, Point b, Point c);
+	float area();	
+};
+Triangle::Triangle(Point a, Point b, Point c) :
+	a{a},
+	b{b},
+	c{c}
+{
 
+}
+float Triangle::area(){
+	float A=(a.getY()-b.getY())*(a.getY()-b.getY())+(a.getX()-b.getX())*(a.getX()-b.getX());
+	float sideA=sqrt (A);
+
+	float B=(b.getY()-c.getY())*(b.getY()-c.getY())+(b.getX()-c.getX())*(b.getX()-c.getX());
+	float sideB=sqrt (B);	
+
+	float C=(c.getY()-a.getY())*(c.getY()-a.getY())+(c.getX()-a.getX())*(c.getX()-a.getX());
+	float sideC=sqrt (C);
+	float s= (sideA+sideB+sideC)/2;
+
+	float sum= sqrt(s*(s-sideA)*(s-sideB)*(s-sideC));
+	return sum;
+}
 int main()
 {
-	Point.setX(1,2);
-	Point.setY(4,6);
-	Point.setZ(3,1);
+	Point a(1,1);
+	Point b(1,2);
+	Point c(2,1);
 
+	Triangle t(a,b,c);
+	cout<<"The area of the triangle is: "<<t.area()<<endl;
 	return 0;
 }
 ```
@@ -351,7 +371,13 @@ int main(int argc, char const *argv[])
 ```
 ##Problem 6  
 ###Create the ZooAnimal inheritance hierarchy shown below. Every animal in the hierarchy should have a char* data member called name. Every Bear, Koala or Panda should have an int data member called gestationPeriod. Every Fish or Shark should have a float data member called speed. Every  animal  in  the  hierarchy  should  include  a  function  called feedingTime() that prints out details of when an animal should be fed. The actual feeding time will be different for each animal but every animal should have a feeding time. Every type of bear should include a function called makenoise() that prints out the noise made by the animal. The actual noise made will be different for each type of bear. Fish do not make any noise.
+
+What I get in console:
 ```
+This bear is named: Pamba.
+Panda says raaaawrrr
+Pamba's gestation period is: 9 months.
+The animal should be fed at: 5. O'clock.
 ```
 ```c++
 #include <iostream>
@@ -360,8 +386,7 @@ using namespace std;
 class ZooAnimal
 {
 public:
-	char* name;
-	name=n;
+	const char* name;
 	void feedingTime(int a);	
 };
 void ZooAnimal::feedingTime(int a){
@@ -372,9 +397,9 @@ class Bear:public ZooAnimal
 {
 public:	
 	int gestationPeriod;
-	void makenoise(char* n){
-cout<<"The bear make the following noise: "<<n<<"\n"<<endl;
-}
+	virtual void makenoise(){
+		cout<<"The bear makes bear noises" << endl;
+	}
 };
 
 class Fish:public ZooAnimal
@@ -389,25 +414,30 @@ public:
 class Koala:public Bear
 {
 public:
-	char noise[50]="wakkaaaah";
-	char* n=noise;
+	const char* noise = "wakkaaaah";
+	void makenoise(){
+		cout << "Koala says "<< noise << endl;
+	}
 };
 class Panda:public Bear
 {
 public:	
-	char noise[50]="raaaawrrr";	
-	char* n=noise;
+	const char noise[50]="raaaawrrr";	
+	void makenoise(){
+		cout << "Panda says " << noise << endl;
+	}
 };
+
 
 int main()
 {
-	char name[50];"Pamba";
+	const char name[50]  {"Pamba"};
 	Panda bear1;
-	bear1.n =name;
+	bear1.name = name;
 	bear1.gestationPeriod =9;
-	cout<<"This bear is named: "<<bear1.n<<"."<<endl;
-	bear1.makenoise(bear1.n);
-	cout<<bear1.n<<"\'s gestation period is: "<<bear1.gestationPeriod<<" months."<<endl;
+	cout<<"This bear is named: "<<bear1.name<<"."<<endl;
+	bear1.makenoise();
+	cout<<bear1.name<<"\'s gestation period is: "<<bear1.gestationPeriod<<" months."<<endl;
 	bear1.feedingTime(5);
 	
 	return 0;
