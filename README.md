@@ -124,7 +124,7 @@ int main()
 ### Write a class called Point. The class should have two private float data members x and y. Write two constructors: one default constructor that initialises the data members to 0, and one that takes two arguments and uses them to initialise the two data members. Also write the following member functions:void SetXY (float, float) assigns the two arguments to the two data members float GetX () returns the value of the x data member float GetY ()returns the value of the y data member void Move (float, float) moves the point by the specified amount void Display () displays the values of the arguments Write a main function that allows  the  user  to  enter  the x and y coordinates of two Point objects and then calculates  and  prints  the  equation  of  the  straight  line  that  joins  the  two points. A straight line is defined by the equation y = mx + c, so the values of m and c can be calculated as follows:  
 m = (y2–y1) / (x2–x1) c = y1-mx1
 
-Setting up class Point to store the values for the points I want to use in the formulas. I also give to class functions to get the x and y values, one function to display, one to set the x and the y and one to move the value x and y. In my main 
+Setting up class Point to store the values for the points I want to use in the formulas. I also give to class functions to get the x and y values, one function to display, one to set the x and the y and one to move the value x and y. In my main I let the user type in the two values for x and the two values for y to use in the class functions.
 
 what I get in the console:
 ```
@@ -212,6 +212,8 @@ int main()
 ## Problem 4  
 ### Now write a new class called Triangle. A triangle consists of 3 points. The Triangle class should have one default constructor and another constructor that initialises the three points of the triangle. It should also have a member function that calculates the area of the triangle according to the formula where a, b and c are the lengths of the three sides, and s is half of the sum of the three sides. Write a main function that inputs three points from the user, and prints out the area of the triangle they form.
 
+Here I copied alot from the problem 3, but instead of setting up setXY I used setX and setY separatley. I also include a new class called Triangle to find the area of the triangle these three points make.
+
 What i get in console:
 ```
 The area of the triangle is: 0.5                  
@@ -295,6 +297,8 @@ int main()
 ## Problem 5  
 ### A video shop needs to store information about the films it stocks. It has two types of film: video-cassettes and DVDs. Create a Film class that has two public data members title (a char*) and length (an int). Next create two classes called Cassette and DVD that are both derived from Film. The Cassette class should contain an extra public data member called condition (an enum type that can take the values perfect, good, average or poor). The DVD class should contain an extra public data member called region (an int). Both Cassette and DVD should have an extra public member function called Print that displays all data members. Write a short main function that creates objects to store information about two films and then displays the information to the screen:  “Titanic” (a DVD, 180 minutes long, region 1) and “Kezkaza Welafen” (a video cassette, 100 minutes long, good condition).
 
+Setting up a class Film with two class childs DVD and Cassette. The two child class inherit title from parent class to use with the other information the ser types in. Im using a enum condition to let the user know what condition the Cassettes are in, and region to give the DVD a known region to store their movie with.
+
 What i get in console:
 ```
 Kezkaza Welafen is a video cassette, 100 minutes long, the condition is Good  
@@ -370,6 +374,8 @@ int main(int argc, char const *argv[])
 ## Problem 6  
 ### Create the ZooAnimal inheritance hierarchy shown below. Every animal in the hierarchy should have a char* data member called name. Every Bear, Koala or Panda should have an int data member called gestationPeriod. Every Fish or Shark should have a float data member called speed. Every  animal  in  the  hierarchy  should  include  a  function  called feedingTime() that prints out details of when an animal should be fed. The actual feeding time will be different for each animal but every animal should have a feeding time. Every type of bear should include a function called makenoise() that prints out the noise made by the animal. The actual noise made will be different for each type of bear. Fish do not make any noise.
 
+Setting up the zooanimal hierarchy with parent class zooAnimal, two child classes Bear and Fish, and the give these new child classes Panda, Koala and Shark. Setting up information about feeding time, gestation period and noice. The names are stored in the zooAnimal class.
+
 What I get in console:
 ```
 This bear is named: Pamba.
@@ -443,6 +449,8 @@ int main()
 ```
 ## Problem7  
 ### Write a C++ program to create two files named abc.txt which contains the text I love C++  Programming and def.txt which contains the text I love Java Programming. Now, copy the contents of these two files to a new file named xyz.txt. Finally, display the appropriate message on successful completion of the task, for exmaple: “the contents of file abc.txt and def.txt are successfully copied to xyz.txt”.
+
+Writing a code that copies the content of two files and putting this content into a new file. At the end its displaying a message on successfull completion of the task.
 
 What i get in console:
 ```
